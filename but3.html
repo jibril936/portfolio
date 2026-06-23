@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BUT3 | Jibril Samahri</title>
+  <meta name="description" content="Troisieme annee de BUT GEII ESE : Kart Dashboard Pro V3 et stage ARODE drone.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="pcb-bg" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html">// Profil</a><a href="but1.html">// BUT1</a><a href="but2.html">// BUT2</a><a class="active" href="but3.html">// BUT3</a><a href="projets.html">// Projets</a><a href="contact.html">// Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero wrap">
+      <p class="section-tag">Collection - Troisieme annee ESE</p>
+      <h1>BUT3 - <strong>interfaces embarquees et drone</strong></h1>
+      <p class="lead">Derniere annee de BUT GEII autour de deux axes forts : le projet Kart Dashboard Pro V3 et le stage de fin de BUT dans le cadre du projet ARODE.</p>
+      <div class="quick-grid"><a href="#kart">Kart Dashboard</a><a href="#stage">Stage BUT3</a><a href="stage-but3.html">Details stage</a></div>
+    </section>
+
+    <section class="wrap section project-detail" id="kart">
+      <div class="detail-head"><span>SAE BUT3</span><h2>Kart Dashboard Pro V3</h2></div>
+      <div class="detail-grid">
+        <img src="assets/media/kart-dashboard-ui.png" alt="Interface Kart Dashboard Pro V3">
+        <div class="card prose">
+          <p>Application Python / PyQt6 pour Raspberry Pi 4, concue pour afficher des donnees vehicule en temps reel. L'architecture separe les services materiels, la simulation, le StateStore et l'interface.</p>
+          <p>Le projet met en avant une interface claire, des services non bloquants, un mode simulation pour developper sans materiel et une structure propre pour connecter les donnees vehicule.</p>
+          <div class="chips"><span>Python</span><span>PyQt6</span><span>Raspberry Pi</span><span>I2C</span><span>QThread</span><span>StateStore</span></div>
+          <p><a class="btn ghost" href="https://github.com/jibril936/kart-dashboard">Depot GitHub</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section project-detail" id="stage">
+      <div class="detail-head"><span>Stage BUT3 - 16/03/2026 au 19/06/2026</span><h2>Projet ARODE : architecture drone et integration</h2></div>
+      <div class="detail-grid reverse">
+        <img src="assets/media/stage-x500-board.jpg" alt="Montage electronique drone X500">
+        <div class="card prose">
+          <p>Stage realise a l'Universite de Technologie de Troyes, au sein du LIST3N. Le projet ARODE existait avant mon arrivee : mon travail a porte sur des contributions ciblees dans ce cadre.</p>
+          <p>L'axe principal est l'etude et la mise en place d'une architecture drone ouverte, capable de remplacer progressivement une solution DJI commerciale limitee et de preparer du traitement embarque sur Jetson.</p>
+          <div class="chips"><span>X500</span><span>Pixhawk 6C</span><span>Jetson Orin Nano</span><span>SIYI</span><span>Mavic 2 Pro</span><span>IA detection</span></div>
+          <p><a class="btn primary" href="stage-but3.html">Voir le stage en detail</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-grid"><p>© 2026 Mohamed Jibril Samahri</p><div><a href="but2.html">← BUT2</a><a href="projets.html">Projets →</a></div></div></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

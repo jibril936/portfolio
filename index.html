@@ -1,368 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio BUT GEII ESE de Mohamed Jibril Samahri : electronique, systemes embarques, robotique, drone, IA et interfaces.">
-  <title>Mohamed Jibril Samahri | Portfolio BUT GEII ESE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jibril Samahri | Portfolio BUT GEII ESE</title>
+  <meta name="description" content="Portfolio de Jibril Samahri, etudiant en BUT GEII parcours Electronique et Systemes Embarques. Projets, stages, drone, IA et systemes embarques.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#accueil" aria-label="Retour a l'accueil">
-      <span class="brand-mark">JS</span>
-      <span>Portfolio</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="site-nav" aria-label="Navigation principale">
-      <a href="#accueil">Accueil</a>
-      <a href="#chronologie">Chronologie</a>
-      <a href="#but1">BUT1</a>
-      <a href="#but2">BUT2</a>
-      <a href="#but3">BUT3</a>
-      <a href="#contact">Contact</a>
+  <div class="pcb-bg" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a class="active" href="index.html">// Profil</a>
+      <a href="but1.html">// BUT1</a>
+      <a href="but2.html">// BUT2</a>
+      <a href="but3.html">// BUT3</a>
+      <a href="projets.html">// Projets</a>
+      <a href="contact.html">// Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-band" id="accueil">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">BUT GEII - parcours ESE</p>
-          <h1>Mohamed Jibril Samahri</h1>
-          <p class="lead">Etudiant en BUT GEII, parcours Electronique et Systemes Embarques. Ce portfolio presente mes projets techniques par annee : electronique, robotique, FPGA, interfaces embarquees, drone et IA.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#chronologie">Voir le parcours</a>
-            <a class="btn secondary" href="assets/docs/cv-fr.pdf">CV francais</a>
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="status"><span></span>SYSTEMES EMBARQUES · BUT GEII ESE</p>
+          <h1>Mohamed Jibril <strong>Samahri</strong></h1>
+          <p class="role">Electronique, robotique, drone, IA et interfaces embarquees</p>
+          <p class="lead">Etudiant en BUT Genie Electrique et Informatique Industrielle, parcours Electronique et Systemes Embarques. Ce portfolio reprend mes projets de formation, mes stages et les travaux recents autour du drone ARODE.</p>
+          <div class="actions">
+            <a class="btn primary" href="projets.html">Explorer les projets</a>
+            <a class="btn ghost" href="assets/docs/cv-fr.pdf">CV francais</a>
           </div>
         </div>
-        <aside class="signal-panel" aria-label="Synthese du portfolio">
-          <div class="signal-row">
-            <span>Formation</span>
-            <strong>BUT GEII</strong>
-          </div>
-          <div class="signal-row">
-            <span>Parcours</span>
-            <strong>Electronique et systemes embarques</strong>
-          </div>
-          <div class="signal-row">
-            <span>Derniers projets</span>
-            <strong>Kart Dashboard / Drone</strong>
-          </div>
-          <div class="signal-row">
-            <span>Orientation</span>
-            <strong>Systemes embarques</strong>
-          </div>
-        </aside>
+        <figure class="portrait-card">
+          <img src="assets/media/portrait.jpg" alt="Portrait de Jibril Samahri">
+        </figure>
       </div>
     </section>
 
-    <section class="section-band" id="chronologie">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Chronologie</p>
-          <h2>Progression du parcours</h2>
-          <p>Mon parcours progresse des bases electroniques vers des projets plus complets melant programmation, integration materielle, interfaces et essais terrain.</p>
+    <section class="wrap section">
+      <div class="telemetry">
+        <article><strong>3</strong><span>Annees BUT GEII</span></article>
+        <article><strong>2</strong><span>Stages lies au drone</span></article>
+        <article><strong>10+</strong><span>Projets et SAE</span></article>
+        <article><strong>2026</strong><span>Stage ARODE / drone</span></article>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <p class="section-tag">01 - A propos</p>
+      <h2 class="section-title">Profil technique</h2>
+      <div class="grid two">
+        <div class="prose card">
+          <p>Mon parcours en GEII m'a progressivement amene de l'electronique de base vers les systemes embarques complets : capteurs, cartes, programmation, robotique, logique numerique, interfaces et integration materielle.</p>
+          <p>En troisieme annee, mon travail s'est surtout oriente vers les drones intelligents et l'integration systeme : architecture drone, alimentation, communication, flux video, IA de detection et exploitation dans une interface.</p>
         </div>
-        <div class="timeline-grid">
-          <article class="timeline-card">
-            <span>BUT1</span>
-            <h3>Premieres SAE</h3>
-            <p>SAE 0, SAE 1, SAE 2 et SAE 3 : bases d'electronique, cartes, capteurs, mesures, robotique et premiers livrables techniques.</p>
-          </article>
-          <article class="timeline-card">
-            <span>BUT2</span>
-            <h3>Projets et stage</h3>
-            <p>Voiture autonome, robot eviteur d'obstacle, FPGA regulateur de vitesse, puis stage drone autour de la detection de victimes.</p>
-          </article>
-          <article class="timeline-card">
-            <span>BUT3</span>
-            <h3>Integration et fin de formation</h3>
-            <p>SAE Kart Dashboard Pro V3, approfondissement systemes embarques et stage de fin de BUT autour d'ARODE, drones et donnees.</p>
-          </article>
+        <div class="card">
+          <h3>// competences.json</h3>
+          <ul class="spec-list">
+            <li><span>Embarque</span><strong>C / C++, Arduino, Raspberry Pi, Jetson, Pixhawk</strong></li>
+            <li><span>Logiciel</span><strong>Python, PyQt6, API, IHM, Git</strong></li>
+            <li><span>Electronique</span><strong>Mesure, cablage, alimentation, FPGA, I2C, PWM</strong></li>
+            <li><span>Domaines</span><strong>Drone, robotique, vision par ordinateur, IA</strong></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section-band dark" id="but1">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">BUT1</p>
-          <h2>SAE de premiere annee</h2>
-          <p>La premiere annee m'a permis de poser les bases : mesures, cablage, analyse de signaux, premiers prototypes et restitution technique.</p>
-        </div>
-        <div class="mahara-grid">
-          <article class="project-card mahara-card">
-            <img src="assets/media/mahara/sae0-1.jpg" alt="Carte electronique de la SAE 0">
-            <div>
-              <span>SAE 0</span>
-              <h3>Premiere approche electronique</h3>
-              <p>Travail de decouverte autour de cartes, composants et premieres manipulations. L'objectif etait de prendre en main les bases de mesure, de cablage et de presentation d'un resultat technique.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le projet marque le debut de la demarche SAE : observer un systeme, identifier les grandeurs utiles, manipuler le materiel et formaliser les resultats.</p>
-              </details>
-            </div>
-          </article>
-          <article class="project-card mahara-card">
-            <img src="assets/media/mahara/sae1-1.jpg" alt="Carte electronique de la SAE 1">
-            <div>
-              <span>SAE 1</span>
-              <h3>Mesures et analyse</h3>
-              <p>Projet centre sur l'analyse de signaux et le comportement de composants. Les essais mettent en avant la mesure, la comparaison entre theorie et pratique et l'interpretation des resultats.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le travail a consolide les reflexes de diagnostic : lire un montage, mesurer proprement, expliquer un comportement et justifier les ecarts observes.</p>
-              </details>
-            </div>
-          </article>
-          <article class="project-card mahara-card">
-            <img src="assets/media/mahara/sae2-1.jpg" alt="Prototype robotique de SAE 2">
-            <div>
-              <span>SAE 2</span>
-              <h3>Prototype et systeme</h3>
-              <p>Projet de mise en pratique avec integration de sous-ensembles. Le travail porte sur la comprehension du fonctionnement global et la validation par tests.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Cette SAE met l'accent sur la relation entre capteurs, traitement et actionneurs, avec une logique de prototype progressivement teste.</p>
-              </details>
-            </div>
-          </article>
-          <article class="project-card mahara-card">
-            <img src="assets/media/mahara/sae3-2.png" alt="Schema de SAE 3">
-            <div>
-              <span>SAE 3</span>
-              <h3>Robot suiveur de ligne</h3>
-              <p>Projet robotique autour d'un suiveur de ligne : capteurs, logique de suivi, essais, schema et rapport final.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le robot devait interpreter la piste puis adapter son comportement. Le projet montre la transition entre electronique de base et systeme embarque simple.</p>
-              </details>
-              <a href="assets/docs/robot-suiveur-ligne.pdf">Rapport</a>
-            </div>
-          </article>
-        </div>
+    <section class="wrap section">
+      <p class="section-tag">02 - Navigation</p>
+      <h2 class="section-title">Parcours par annee</h2>
+      <div class="grid three">
+        <a class="card nav-card" href="but1.html">
+          <span>BUT1</span>
+          <h3>Fondamentaux GEII</h3>
+          <p>Mesures, soudure, composants, premiers prototypes et robot suiveur de ligne.</p>
+        </a>
+        <a class="card nav-card" href="but2.html">
+          <span>BUT2</span>
+          <h3>Robotique, FPGA et stage</h3>
+          <p>Voiture autonome, robot eviteur, regulateur FPGA et premier stage drone.</p>
+        </a>
+        <a class="card nav-card" href="but3.html">
+          <span>BUT3</span>
+          <h3>Dashboard et stage ARODE</h3>
+          <p>Kart Dashboard Pro V3 et stage de fin de BUT sur une architecture drone.</p>
+        </a>
       </div>
     </section>
 
-    <section class="section-band" id="but2">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">BUT2</p>
-          <h2>Projets d'enseignement et stage</h2>
-          <p>La deuxieme annee approfondit la programmation embarquee, la robotique, la logique numerique et une premiere experience professionnelle autour du drone.</p>
-        </div>
-
-        <div class="mahara-grid">
-          <article class="project-card mahara-card featured">
-            <img src="assets/media/kart-sae.jpg" alt="Photo de l'equipe avec la voiture autonome">
-            <div>
-              <span>Voiture autonome</span>
-              <h3>SAE informatique S3</h3>
-              <p>Projet de voiture autonome avec rapport et soutenance. Le travail porte sur la logique de decision, la programmation, l'acquisition de donnees et la validation du comportement.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le projet demandait de relier perception, traitement informatique et comportement du vehicule. La soutenance a permis de presenter les choix techniques et les resultats obtenus.</p>
-              </details>
-              <a href="assets/docs/sae-informatique-s3.pdf">Rapport</a>
-              <a href="assets/docs/voiture-autonome-soutenance.pdf">Soutenance</a>
-            </div>
-          </article>
-          <article class="project-card mahara-card">
-            <img src="assets/media/mahara/robot-eviteur-fonctions.png" alt="Document de fonctions du robot eviteur d'obstacle">
-            <div>
-              <span>Robot eviteur d'obstacle</span>
-              <h3>Fonctions informatiques</h3>
-              <p>Projet centre sur l'analyse fonctionnelle, l'evitement d'obstacle et les fonctions informatiques associees au comportement du robot.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le travail porte sur la decomposition du comportement : detection d'obstacle, choix de trajectoire, commande et verification des fonctions attendues.</p>
-              </details>
-              <a href="assets/docs/robot-eviteur-fonctions.pdf">Document</a>
-              <a href="assets/docs/robot-eviteur-document.pdf">Annexe</a>
-            </div>
-          </article>
-          <article class="project-card mahara-card">
-            <img src="assets/media/mahara/fpga-1.png" alt="Montage FPGA regulateur de vitesse">
-            <div>
-              <span>FPGA</span>
-              <h3>Regulateur de vitesse</h3>
-              <p>Projet de regulation de vitesse avec logique numerique, validation fonctionnelle et exploitation de signaux.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le projet met en avant l'utilisation d'une architecture FPGA pour traiter des signaux et piloter une regulation, avec essais de comportement et verification du montage.</p>
-              </details>
-            </div>
-          </article>
-        </div>
-
-        <div class="stage-panel mahara-stage">
-          <div class="stage-hero">
-            <div>
-              <p class="eyebrow">Stage BUT2</p>
-              <h2>Detection de victimes par drone</h2>
-              <p>Premiere experience professionnelle autour du projet ARODE, avec detection de victimes par drone pour l'aide aux equipes de secours. Periode : du 13 janvier au 7 mars 2025.</p>
-            </div>
-            <div class="stage-photo-strip">
-              <img src="assets/media/mahara/stage-drone-1.jpg" alt="Drone utilise pendant le stage">
-              <img src="assets/media/mahara/stage-drone-2.jpg" alt="Drone DJI et radiocommande">
-              <img src="assets/media/mahara/stage-drone-3.jpg" alt="Drone en vol">
-            </div>
-          </div>
-          <div class="stage-grid">
-            <article class="stage-card">
-              <h3>Objectifs du stage</h3>
-              <ul class="check-list">
-                <li>Transmission video inferieure a une seconde.</li>
-                <li>Detection IA embarquee.</li>
-                <li>Megaphone pour instructions aux victimes.</li>
-                <li>Synchronisation video, GPS et horodatage.</li>
-              </ul>
-            </article>
-            <article class="stage-card">
-              <h3>Outils et competences</h3>
-              <div class="tech-stack compact-tags">
-                <span>Android Studio</span>
-                <span>Java / Kotlin</span>
-                <span>DJI Mobile SDK</span>
-                <span>ffmpeg</span>
-                <span>exiftool</span>
-                <span>Methode agile</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-band dark" id="but3">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">BUT3</p>
-          <h2>Projets recents et stage de fin de BUT</h2>
-          <p>La troisieme annee met l'accent sur l'integration logicielle, les interfaces embarquees et le stage de fin de BUT autour d'un drone intelligent pour le projet ARODE.</p>
-        </div>
-
-        <div class="mahara-grid">
-          <article class="project-card mahara-card featured">
-            <img src="assets/media/kart-dashboard-ui.png" alt="Interface Kart Dashboard Pro V3">
-            <div>
-              <span>SAE BUT3</span>
-              <h3>Kart Dashboard Pro V3</h3>
-              <p>Application Python / PyQt6 pour Raspberry Pi 4, concue pour afficher des donnees vehicule en temps reel. L'architecture separe les services materiels, la simulation, le StateStore et l'interface.</p>
-              <details class="project-details">
-                <summary>Details</summary>
-                <p>Le dashboard s'appuie sur des services non bloquants, un mode simulation pour travailler sans materiel et une interface adaptee a la lecture rapide des donnees vehicule.</p>
-              </details>
-              <a href="https://github.com/jibril936/kart-dashboard">Depot GitHub</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <span>Architecture</span>
-            <h3>I2C, QThread et StateStore</h3>
-            <p>Les lectures capteurs sont isolees dans des services afin de ne pas bloquer l'interface. Le StateStore centralise les donnees et diffuse les changements vers l'IHM.</p>
-          </article>
-          <article class="project-card">
-            <span>Simulation</span>
-            <h3>MockService</h3>
-            <p>Le mode simulation permet de developper, tester et presenter le dashboard sans materiel connecte, en conservant les memes contrats que les services reels.</p>
-          </article>
-        </div>
-
-        <div class="stage-panel">
-          <div class="stage-hero">
-            <div>
-              <p class="eyebrow">Stage BUT3</p>
-              <h2>Projet ARODE, drone et donnees</h2>
-              <p>Stage realise a l'Universite de Technologie de Troyes, au sein du LIST3N. La mission principale porte sur une architecture drone ouverte pour la surveillance et l'aide aux secours en situation post-catastrophe.</p>
-            </div>
-            <ul class="info-list" aria-label="Informations principales du stage BUT3">
-              <li><span>Organisme</span><strong>Universite de Technologie de Troyes</strong></li>
-              <li><span>Laboratoire</span><strong>LIST3N</strong></li>
-              <li><span>Contexte</span><strong>Projet ARODE</strong></li>
-              <li><span>Periode</span><strong>16/03/2026 - 19/06/2026</strong></li>
-              <li><span>Duree</span><strong>14 semaines</strong></li>
-            </ul>
-          </div>
-
-          <div class="stage-photo-strip stage-x500-strip">
-            <img src="assets/media/stage-x500-board.jpg" alt="Montage electronique du drone ARODE">
-            <img src="assets/media/stage-x500-esc.jpg" alt="Controleur et cablage du drone ARODE">
-            <img src="assets/media/stage-x500-detail.jpg" alt="Detail materiel du drone ARODE">
-          </div>
-
-          <div class="stage-grid">
-            <article class="stage-card">
-              <h3>Objectifs du stage</h3>
-              <ul class="check-list">
-                <li>Etudier une architecture drone ouverte pour depasser les limites d'une solution DJI commerciale.</li>
-                <li>Preparer l'integration d'un traitement embarque avec Jetson.</li>
-                <li>Travailler autour de la cartographie 2D / 3D, de la geolocalisation et de la projection de detections.</li>
-                <li>Explorer une piste de donnees synthetiques pour ameliorer un systeme IA / VLM.</li>
-              </ul>
-            </article>
-            <article class="stage-card">
-              <h3>Technologies et axes</h3>
-              <div class="tech-stack compact-tags">
-                <span>Drone X500</span>
-                <span>Pixhawk</span>
-                <span>Jetson</span>
-                <span>Python</span>
-                <span>API</span>
-                <span>IHM</span>
-                <span>Cartographie</span>
-                <span>IA / VLM</span>
-              </div>
-            </article>
-          </div>
-
-          <details class="stage-details">
-            <summary>Architecture drone</summary>
-            <p>Travail sur une plateforme Holybro X500 V2 avec Pixhawk 6C, Jetson Orin Nano, liaison SIYI MK32, camera SIYI A8 mini, moteurs T-Motor, ESC Tekko32 F4, batterie Li-ion 4S, distribution FCHUB-12S et protections de cablage. L'objectif est de construire une plateforme plus ouverte qu'un drone DJI, capable d'evoluer vers du traitement IA embarque.</p>
-            <div class="doc-links">
-              <a class="btn secondary" href="assets/docs/architecture-drone-x500.html">Architecture X500</a>
-            </div>
-          </details>
-
-          <details class="stage-details">
-            <summary>Donnees synthetiques et VLM</summary>
-            <p>Exploration d'une piste de generation de donnees synthetiques pour enrichir l'entrainement ou l'evaluation d'un VLM : masques, inpainting, segmentation, detourage, augmentation, FLUX Fill, LaMa, PatchMatch, LoRA, SAM2, BiRefNet, YOLO, DEIMV2 et DINOv3. La piste reste experimentale : coherence visuelle, realisme terrain et qualite des annotations restent limitants.</p>
-          </details>
-
-          <details class="stage-details">
-            <summary>ARODE Live et solution de secours</summary>
-            <p>Travail secondaire sur ARODE Live : flux video RTSP, GPS, metadonnees, exports CSV, affichage d'alarmes, tri des detections et solution de secours avec DJI Mavic 2 Pro pendant la mise au point de la plateforme X500.</p>
-          </details>
-
-          <div class="doc-links">
-            <a class="btn primary" href="assets/docs/rapport-stage-arode-drone.pdf">Rapport de stage</a>
-            <a class="btn secondary" href="assets/docs/rapport-stage-arode-drone.docx">Rapport DOCX</a>
-          </div>
-        </div>
+    <section class="wrap section">
+      <p class="section-tag">03 - Projets recents</p>
+      <h2 class="section-title">A mettre en avant</h2>
+      <div class="grid three">
+        <a class="project-card" href="but3.html#kart">
+          <img src="assets/media/kart-dashboard-ui.png" alt="Interface Kart Dashboard Pro V3">
+          <div><span>SAE BUT3</span><h3>Kart Dashboard Pro V3</h3><p>Application Python / PyQt6 pour afficher des donnees vehicule en temps reel.</p></div>
+        </a>
+        <a class="project-card" href="stage-but3.html">
+          <img src="assets/media/stage-x500-board.jpg" alt="Architecture drone X500">
+          <div><span>Stage BUT3</span><h3>Architecture drone ARODE</h3><p>Plateforme X500, Pixhawk, Jetson, SIYI, alimentation et tests progressifs.</p></div>
+        </a>
+        <a class="project-card" href="but2.html#stage">
+          <img src="assets/media/mahara/stage-drone-1.jpg" alt="Drone utilise pendant le stage BUT2">
+          <div><span>Stage BUT2</span><h3>Detection de victimes par drone</h3><p>Transmission video, GPS, DJI Mobile SDK, ffmpeg et tests terrain.</p></div>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="contact">
-    <div class="container footer-grid">
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Mohamed Jibril Samahri - BUT GEII ESE - IUT de Troyes</p>
       <div>
-        <p class="eyebrow">Contact & documents</p>
-        <h2>Documents du portfolio</h2>
-        <p>Les documents principaux sont regroupes ici : CV, rapports, soutenances et documents techniques.</p>
-      </div>
-      <div class="footer-links">
-        <a href="assets/docs/cv-fr.pdf">CV francais</a>
-        <a href="assets/docs/cv-en.pdf">CV anglais</a>
-        <a href="assets/docs/rapport-stage-arode-drone.pdf">Rapport stage BUT3</a>
-        <a href="assets/docs/sae-informatique-s3.pdf">SAE informatique S3</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
-
   <script src="assets/app.js"></script>
 </body>
 </html>

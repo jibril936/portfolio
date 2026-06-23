@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stage BUT3 ARODE | Jibril Samahri</title>
+  <meta name="description" content="Stage BUT3 de Jibril Samahri dans le cadre du projet ARODE : architecture drone, solution de secours Mavic 2 Pro, detection IA, ARODE Live et donnees synthetiques.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="pcb-bg" aria-hidden="true"></div>
+  <header class="nav">
+    <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html">// Profil</a><a href="but1.html">// BUT1</a><a href="but2.html">// BUT2</a><a class="active" href="but3.html">// BUT3</a><a href="projets.html">// Projets</a><a href="contact.html">// Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero wrap">
+      <p class="section-tag">Stage BUT3 - 16 mars au 19 juin 2026</p>
+      <h1>Stage ARODE - <strong>architecture drone</strong></h1>
+      <p class="lead">Stage realise a l'Universite de Technologie de Troyes, au sein du LIST3N. ARODE est le cadre global du projet ; mon travail porte sur une contribution ciblee : drone, solution de secours, essais de detection, ajustements ARODE Live et exploration de donnees synthetiques.</p>
+      <div class="quick-grid"><a href="#drone">Drone X500</a><a href="#secours">Mavic 2 Pro</a><a href="#ia">Detection IA</a><a href="#synth">Donnees synthetiques</a></div>
+    </section>
+
+    <section class="wrap section">
+      <div class="gallery three-img">
+        <img src="assets/media/stage-x500-board.jpg" alt="Montage electronique du drone ARODE">
+        <img src="assets/media/stage-x500-esc.jpg" alt="ESC et cablage du drone ARODE">
+        <img src="assets/media/stage-x500-detail.jpg" alt="Detail materiel du drone ARODE">
+      </div>
+    </section>
+
+    <section class="wrap section" id="drone">
+      <p class="section-tag">01 - Mission principale</p>
+      <h2 class="section-title">Architecture du drone ARODE</h2>
+      <div class="grid two">
+        <div class="card prose">
+          <p>La mission principale concerne l'etude et la mise en place d'une architecture drone ouverte. L'objectif est de disposer d'une plateforme plus maitrisable qu'un drone DJI commercial, avec une marge d'evolution vers le traitement embarque.</p>
+          <p>La plateforme s'appuie sur un chassis Holybro X500 V2, un Pixhawk 6C, une Jetson Orin Nano, une liaison SIYI, des moteurs T-Motor, des ESC Tekko32 F4, une batterie Li-ion 4S, une distribution FCHUB-12S et des protections de cablage.</p>
+        </div>
+        <div class="card">
+          <h3>// composants</h3>
+          <ul class="spec-list">
+            <li><span>Structure</span><strong>Holybro X500 V2</strong></li>
+            <li><span>Pilotage</span><strong>Pixhawk 6C / ArduPilot</strong></li>
+            <li><span>Calcul</span><strong>Jetson Orin Nano</strong></li>
+            <li><span>Radio / video</span><strong>SIYI MK32 / A8 mini / R1M</strong></li>
+            <li><span>Alimentation</span><strong>4S Li-ion, PM02 V3, FCHUB-12S, BEC 12 V</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="secours">
+      <p class="section-tag">02 - Solution de secours</p>
+      <h2 class="section-title">DJI Mavic 2 Pro et ARODE Live</h2>
+      <div class="grid two">
+        <div class="card prose">
+          <p>En attendant la finalisation de la plateforme X500, une solution de secours a ete mise en place autour du DJI Mavic 2 Pro. Elle permettait de continuer les essais logiciels sans attendre que le drone principal soit totalement operationnel.</p>
+          <p>Cette solution a servi a tester les flux video, l'exploitation GPS/metadonnees, les exports CSV, l'affichage d'alarmes, le tri des detections et l'integration pratique dans ARODE Live.</p>
+        </div>
+        <img class="card-img" src="assets/media/dji-rc-pro-2.jpg" alt="Radiocommande DJI">
+      </div>
+    </section>
+
+    <section class="wrap section" id="ia">
+      <p class="section-tag">03 - Detection IA</p>
+      <h2 class="section-title">Tests de modeles fine-tunes</h2>
+      <div class="card prose">
+        <p>Dans le cadre des essais avec la solution de secours et ARODE Live, plusieurs familles de modeles de detection ont ete testees sur des donnees drone. L'objectif etait d'evaluer leur comportement dans une chaine complete, pas seulement leur performance isolee.</p>
+        <div class="chips"><span>YOLO fine-tune</span><span>DEIM / DEIMv2 fine-tune</span><span>RT-DETR fine-tune</span><span>Formats de sortie</span><span>Integration IHM</span></div>
+        <p>Ces essais ont aide a comparer la facilite d'exploitation : qualite des detections, stabilite, vitesse d'inference, format des resultats, synchronisation possible avec GPS/metadonnees et affichage dans l'interface.</p>
+      </div>
+    </section>
+
+    <section class="wrap section" id="synth">
+      <p class="section-tag">04 - Piste exploratoire</p>
+      <h2 class="section-title">Donnees synthetiques et VLM</h2>
+      <div class="card prose">
+        <p>Une piste complementaire a consiste a explorer la generation de donnees synthetiques pour ameliorer l'entrainement ou l'evaluation du VLM. L'idee etait de produire des cas varies autour de scenes drone, notamment pour des situations rares ou difficiles a collecter.</p>
+        <div class="chips"><span>FLUX Fill</span><span>LaMa</span><span>PatchMatch</span><span>LoRA</span><span>SAM2</span><span>BiRefNet</span><span>YOLO</span><span>DEIMv2</span><span>DINOv3</span><span>Metadonnees</span></div>
+        <p>La solution n'a pas abouti a une base finale validee. Les limites identifiees concernent le realisme terrain, la coherence visuelle, la perspective, la qualite des masques, le cout de generation et la fiabilite des annotations.</p>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <p class="section-tag">05 - Bilan</p>
+      <h2 class="section-title">Ce que le stage demontre</h2>
+      <div class="grid three">
+        <article class="card"><h3>Integration systeme</h3><p>Comprendre les sous-systemes d'un drone : energie, propulsion, controle, calcul, cameras et communication.</p></article>
+        <article class="card"><h3>Tests progressifs</h3><p>Verifier tensions, masses, polarites, cablage, sous-ensembles et integration sans bruler les etapes.</p></article>
+        <article class="card"><h3>IA appliquee</h3><p>Tester des detecteurs, comprendre les sorties, relier les resultats a une interface et identifier les limites des donnees.</p></article>
+      </div>
+      <p class="doc-actions"><a class="btn primary" href="assets/docs/rapport-stage-arode-drone.pdf">Rapport de stage</a> <a class="btn ghost" href="assets/docs/architecture-drone-x500.html">Architecture X500</a></p>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap footer-grid"><p>© 2026 Mohamed Jibril Samahri</p><div><a href="but3.html">← BUT3</a><a href="contact.html">Contact</a></div></div></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
