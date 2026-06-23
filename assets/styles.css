@@ -261,6 +261,7 @@ p {
 .signal-panel,
 .terminal-card,
 .project-card,
+.stage-card,
 .component-card,
 .evidence-grid article,
 .skill-grid article,
@@ -424,6 +425,104 @@ p {
 .evidence-grid article,
 .skill-grid article {
   padding: 22px;
+}
+
+.stage-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.info-list,
+.check-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.info-list {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(15, 23, 32, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.info-list li {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-list li:last-child {
+  border-bottom: 0;
+}
+
+.info-list span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.info-list strong {
+  color: var(--text);
+}
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stage-grid.final-grid {
+  margin-top: 16px;
+}
+
+.stage-card {
+  padding: 24px;
+}
+
+.stage-card.wide {
+  grid-column: span 2;
+}
+
+.stage-card .pipeline {
+  margin-top: 20px;
+}
+
+.check-list {
+  display: grid;
+  gap: 12px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--green);
+  border-radius: 2px;
+  background: rgba(98, 230, 165, 0.16);
+}
+
+.stage-detail {
+  margin-top: 16px;
+}
+
+.tech-stack.compact-tags span {
+  flex-basis: 120px;
+  min-height: 48px;
+  font-size: 13px;
 }
 
 .terminal-card {
@@ -632,6 +731,7 @@ pre {
   .two-col,
   .two-col.reverse,
   .drone-layout,
+  .stage-hero,
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -643,6 +743,7 @@ pre {
   .architecture-strip,
   .evidence-grid,
   .skill-grid,
+  .stage-grid,
   .project-grid,
   .project-grid.compact {
     grid-template-columns: 1fr;
@@ -657,7 +758,8 @@ pre {
   }
 
   .project-card.featured,
-  .project-grid.compact .project-card.featured {
+  .project-grid.compact .project-card.featured,
+  .stage-card.wide {
     grid-column: auto;
     grid-template-columns: 1fr;
   }
