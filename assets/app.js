@@ -34,7 +34,7 @@ const activeObserver = new IntersectionObserver(
 sections.forEach((section) => activeObserver.observe(section));
 
 const revealItems = document.querySelectorAll(
-  ".component-card, .project-card, .stage-card, .stage-panel, .skill-grid article, .evidence-grid article, .architecture-strip article, .pipeline article"
+  ".component-card, .project-card, .timeline-card, .stage-card, .stage-panel, .skill-grid article, .evidence-grid article, .architecture-strip article, .pipeline article"
 );
 
 revealItems.forEach((item) => item.classList.add("reveal"));
