@@ -399,6 +399,31 @@ p {
   object-fit: cover;
 }
 
+.stage-x500-strip {
+  margin: 4px 0 22px;
+}
+
+.stage-x500-strip img {
+  height: 220px;
+}
+
+.project-details {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.project-details summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+.project-details p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
 .stage-details {
   margin-top: 14px;
   border: 1px solid var(--line);
