@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio BUT GEII ESE - drone ARODE, architecture embarquee, IA et projets techniques de Mohamed Jibril Samahri.">
+  <title>Mohamed Jibril Samahri | Portfolio Drone & Electronique embarquee</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#profil" aria-label="Retour au profil">
+      <span class="brand-mark">JS</span>
+      <span>Portfolio</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="#profil">Profil</a>
+      <a href="#arode">ARODE</a>
+      <a href="#drone">Drone</a>
+      <a href="#ia">IA & donnees</a>
+      <a href="#projets">BUT 3 ESE</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-band" id="profil">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">BUT GEII - parcours ESE</p>
+          <h1>Mohamed Jibril Samahri</h1>
+          <p class="lead">Portfolio technique oriente drone, electronique embarquee, architecture d'alimentation et integration IA dans le cadre du projet ARODE.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#drone">Voir le drone</a>
+            <a class="btn secondary" href="assets/docs/rapport-stage-arode-drone.pdf">Rapport de stage</a>
+          </div>
+        </div>
+        <aside class="signal-panel" aria-label="Synthese du profil">
+          <div class="signal-row">
+            <span>Mission principale</span>
+            <strong>Drone ARODE</strong>
+          </div>
+          <div class="signal-row">
+            <span>Plateforme</span>
+            <strong>X500 + Pixhawk + Jetson</strong>
+          </div>
+          <div class="signal-row">
+            <span>Axes</span>
+            <strong>IA, vision, embarque</strong>
+          </div>
+          <div class="signal-row">
+            <span>Contexte</span>
+            <strong>LIST3N / ARODE</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-band" id="arode">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Cadre du stage</p>
+          <h2>ARODE : detection, analyse et exploitation terrain</h2>
+          <p>Le stage s'inscrit dans le projet ARODE, dont l'objectif est d'exploiter des images de drone pour assister la recherche de victimes. Le systeme combine une chaine de detection, un module d'analyse de type VLM et une interface de supervision Arode Live.</p>
+          <p>Le drone constitue le coeur de la mission : concevoir une architecture materielle ouverte capable de remplacer une solution DJI commerciale limitee, tout en preparant l'integration d'un traitement embarque sur Jetson.</p>
+        </div>
+        <div class="pipeline" aria-label="Architecture logique ARODE">
+          <article>
+            <span>01</span>
+            <strong>Acquisition</strong>
+            <p>Drone DJI ou drone X500, flux video, photos, GPS et metadonnees.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Detection IA</strong>
+            <p>Detection de personnes ou zones d'interet avant interpretation.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>VLM</strong>
+            <p>Analyse contextuelle pour aider a qualifier les detections.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <strong>Arode Live</strong>
+            <p>Visualisation, suivi terrain, export et solution de secours.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band dark" id="drone">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Projet principal</p>
+          <h2>Architecture du drone ARODE</h2>
+          <p>La mission principale porte sur la conception et la mise au point d'un drone quadricoptere base sur un chassis Holybro X500 V2, avec autopilote Pixhawk 6C, liaison SIYI et calcul embarque Jetson Orin Nano.</p>
+        </div>
+        <div class="drone-layout">
+          <figure class="media-frame">
+            <img src="assets/media/drone-atelier-1.jpeg" alt="Assemblage du drone ARODE en atelier">
+          </figure>
+          <div class="component-grid">
+            <article class="component-card">
+              <span>Structure</span>
+              <h3>Holybro X500 V2</h3>
+              <p>Base mecanique du quadricoptere, support des bras, moteurs, ESC, batterie et composants embarques.</p>
+            </article>
+            <article class="component-card">
+              <span>Pilotage</span>
+              <h3>Pixhawk 6C</h3>
+              <p>Controleur de vol sous ArduPilot pour la stabilisation, les capteurs et la commande des moteurs.</p>
+            </article>
+            <article class="component-card">
+              <span>Calcul</span>
+              <h3>Jetson Orin Nano</h3>
+              <p>Ordinateur embarque prevu pour executer les traitements IA au plus pres du drone.</p>
+            </article>
+            <article class="component-card">
+              <span>Radio / video</span>
+              <h3>SIYI MK32</h3>
+              <p>Liaison de commande et retour video, avec camera SIYI et elements reseau embarques.</p>
+            </article>
+          </div>
+        </div>
+        <div class="architecture-strip">
+          <article>
+            <h3>Alimentation</h3>
+            <p>Batterie 4S Li-ion, module PM02 V3, distribution FCHUB-12S, BEC 12 V et protections de cablage pour alimenter autopilote, Jetson, camera et reseau.</p>
+          </article>
+          <article>
+            <h3>Materiel</h3>
+            <p>Integration progressive des composants apres reception : controle visuel, montage, cablage, verification de tensions et tests de sous-ensembles.</p>
+          </article>
+          <article>
+            <h3>Objectif</h3>
+            <p>Obtenir une plateforme plus ouverte qu'un drone DJI, capable d'evoluer vers un traitement embarque et une meilleure maitrise technique.</p>
+          </article>
+        </div>
+        <div class="doc-links">
+          <a class="btn primary" href="assets/docs/architecture-drone-x500.html">Architecture X500</a>
+          <a class="btn secondary" href="assets/docs/rapport-stage-arode-drone.pdf">Rapport PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" id="ia">
+      <div class="container two-col reverse">
+        <div>
+          <p class="eyebrow">Donnees synthetiques & VLM</p>
+          <h2>Une piste exploree pour enrichir l'entrainement</h2>
+          <p>Une partie du travail a consiste a explorer la generation de donnees synthetiques pour ameliorer l'entrainement ou l'evaluation du VLM. L'idee etait de produire des situations variees autour de scenes de drone, afin d'augmenter la diversite des cas observes.</p>
+          <p>La demarche a mobilise plusieurs pistes : generation par diffusion, inpainting, segmentation, detourage, augmentation de donnees et essais autour de LoRA. La solution n'a pas abouti en version finale, mais elle a permis d'identifier des limites importantes : coherence visuelle, realisme terrain, cout de generation et qualite des annotations.</p>
+        </div>
+        <div class="tech-stack">
+          <span>FLUX Fill</span>
+          <span>LaMa</span>
+          <span>PatchMatch</span>
+          <span>LoRA</span>
+          <span>SAM2</span>
+          <span>BiRefNet</span>
+          <span>YOLO</span>
+          <span>DEIMV2</span>
+          <span>DINOv3</span>
+          <span>Metadonnees</span>
+        </div>
+      </div>
+      <div class="container evidence-grid">
+        <article>
+          <h3>Ce qui a ete tente</h3>
+          <p>Scripts de generation, tests d'inpainting, remplacement d'elements dans l'image, extraction de masques, evaluation de resultats et organisation de sorties experimentales.</p>
+        </article>
+        <article>
+          <h3>Interet pour ARODE</h3>
+          <p>Produire plus de cas d'entrainement pour aider le VLM a interpreter des situations rares ou difficiles a collecter en conditions reelles.</p>
+        </article>
+        <article>
+          <h3>Limite constatee</h3>
+          <p>La generation seule ne garantit pas des donnees suffisamment realistes, annotees et fiables pour remplacer une acquisition terrain.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-band dark" id="arode-live">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Interface & solution de secours</p>
+          <h2>Arode Live et Mavic 2 Pro</h2>
+          <p>En parallele du drone principal, des corrections legeres ont ete effectuees autour d'Arode Live et une solution de secours a ete mise en place avec le DJI Mavic 2 Pro. Cette piste permettait de disposer d'un drone commercial exploitable pendant que la plateforme X500 etait encore en cours d'assemblage.</p>
+          <p>Le travail concerne surtout l'integration pratique : flux video, GPS, metadonnees, export CSV, affichage d'alarmes, tri des detections et petits correctifs d'interface.</p>
+        </div>
+        <div class="terminal-card">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <pre><code>branches observees:
+  demo_mavic2pro
+  demo_mavic2pro_interface
+
+traces techniques:
+  RTSP / video
+  GPS / metadata
+  CSV export
+  badges / alarmes
+  corrections UI</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" id="projets">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Collection BUT 3 ESE</p>
+          <h2>Projets techniques et apprentissages</h2>
+          <p>Le portfolio regroupe les projets lies au parcours Electronique et Systemes Embarques : automatisme, informatique industrielle, robotique, FPGA, regulation et documentation technique.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card featured">
+            <img src="assets/media/pcb.webp" alt="Carte electronique et pistes de circuit imprime">
+            <div>
+              <span>Stage</span>
+              <h3>Drone ARODE</h3>
+              <p>Conception d'une architecture drone ouverte, tests materiels, integration IA embarquee et solution de secours Mavic 2 Pro.</p>
+              <a href="#drone">Lire la section</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <span>SAE</span>
+            <h3>Voiture autonome</h3>
+            <p>Projet de robotique mobile : capteurs, logique de decision, deplacement autonome et validation par essais.</p>
+            <a href="assets/docs/sae4-journal-bord.pdf">Journal de bord</a>
+          </article>
+          <article class="project-card">
+            <span>SAE</span>
+            <h3>Robot suiveur de ligne</h3>
+            <p>Integration capteurs/actionneurs, suivi de trajectoire, tests de comportement et rapport technique.</p>
+            <a href="assets/docs/robot-suiveur-ligne.pdf">Rapport</a>
+          </article>
+          <article class="project-card">
+            <span>FPGA</span>
+            <h3>Regulateur de vitesse</h3>
+            <p>Conception logique, regulation, validation fonctionnelle et exploitation de signaux numeriques.</p>
+          </article>
+          <article class="project-card">
+            <span>Informatique</span>
+            <h3>SAE S3</h3>
+            <p>Developpement logiciel, structuration de code, documentation et presentation technique.</p>
+            <a href="assets/docs/sae-informatique-s3.pdf">Document</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band skills" id="competences">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Competences demontrees</p>
+          <h2>Du cablage au logiciel embarque</h2>
+        </div>
+        <div class="skill-grid">
+          <article><strong>Electronique embarquee</strong><span>Alimentation, distribution, BEC, cablage, tests de tension.</span></article>
+          <article><strong>Drone</strong><span>Pixhawk, ArduPilot, SIYI, architecture X500, integration materielle.</span></article>
+          <article><strong>IA & vision</strong><span>Detection, VLM, donnees synthetiques, segmentation, evaluation.</span></article>
+          <article><strong>Developpement</strong><span>Git, scripts Python, corrections interface, exports et automatisation.</span></article>
+          <article><strong>Documentation</strong><span>Rapport, architecture technique, chronologie, traces de tests.</span></article>
+          <article><strong>Integration</strong><span>Lien entre terrain, interface Arode Live, donnees GPS et flux video.</span></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <p class="eyebrow">Contact & documents</p>
+        <h2>Portfolio pret pour GitHub Pages</h2>
+        <p>Ce site reprend les elements essentiels du stage ARODE, les projets BUT 3 ESE et les documents exportes depuis Mahara.</p>
+      </div>
+      <div class="footer-links">
+        <a href="assets/docs/cv-fr.pdf">CV francais</a>
+        <a href="assets/docs/cv-en.pdf">CV anglais</a>
+        <a href="assets/docs/rapport-stage-arode-drone.docx">Rapport DOCX</a>
+        <a href="assets/docs/rapport-stage-arode-drone.pdf">Rapport PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

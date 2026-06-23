@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture Drone X500 — Plan de maintenance</title>
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --muted: #555;
+    --line: #ddd;
+    --accent: #0066cc;
+    --bg: #fff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #f0f0f3;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  .page {
+    background: var(--bg);
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 48px 56px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  h1 {
+    font-size: 30px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  h2 {
+    font-size: 22px;
+    margin: 0 0 6px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent);
+    font-weight: 600;
+  }
+  .subtitle { color: var(--muted); font-size: 15px; margin: 0 0 28px; }
+  .meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin: 24px 0;
+    padding: 16px 20px;
+    background: #f7f9fc;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .meta div { min-width: 160px; }
+  .meta .label { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+  .meta .value { font-weight: 600; font-size: 14px; }
+  .diagram-wrap {
+    margin: 16px 0 8px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fafafa;
+    overflow-x: auto;
+    text-align: center;
+  }
+  .mermaid { text-align: center; }
+  .legend {
+    margin: 20px 0;
+    padding: 16px 20px;
+    background: #f7f9fc;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+  }
+  .legend strong { display: block; margin-bottom: 8px; font-size: 14px; }
+  .legend ul { margin: 0; padding-left: 20px; }
+  .legend li { margin: 3px 0; }
+  .cover {
+    text-align: center;
+    padding: 80px 56px;
+  }
+  .cover h1 { font-size: 42px; margin-bottom: 16px; }
+  .cover .big-sub { font-size: 20px; color: var(--muted); margin-bottom: 48px; }
+  .toc {
+    text-align: left;
+    max-width: 480px;
+    margin: 40px auto;
+    font-size: 16px;
+  }
+  .toc li { margin: 12px 0; padding: 12px 16px; background: #f7f9fc; border-radius: 6px; border: 1px solid var(--line); }
+  .toc a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .warn {
+    margin: 16px 0;
+    padding: 12px 18px;
+    background: #fff4e5;
+    border-left: 4px solid #ff9800;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th, td { padding: 8px 12px; text-align: left; border: 1px solid var(--line); }
+  th { background: #f0f4f8; font-weight: 600; }
+  code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+  .footer-note { margin-top: 32px; font-size: 11px; color: #999; text-align: center; }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+  }
+</style>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    flowchart: { curve: 'basis', nodeSpacing: 50, rankSpacing: 60, useMaxWidth: true },
+    themeVariables: {
+      fontSize: '15px',
+      fontFamily: '-apple-system, "Segoe UI", Roboto, sans-serif',
+      lineColor: '#555'
+    }
+  });
+</script>
+</head>
+<body>
+
+<!-- PAGE DE GARDE -->
+<section class="page cover">
+  <h1>🚁 Drone Quadcopter X500</h1>
+  <p class="big-sub">Plan d'architecture & documentation de maintenance</p>
+  <div class="toc">
+    <strong style="display:block;margin-bottom:16px;font-size:18px;">Sommaire</strong>
+    <ol>
+      <li><a href="#alim">1 — Architecture Alimentation</a></li>
+      <li><a href="#reseau">2 — Architecture Réseau / Vidéo</a></li>
+      <li><a href="#data">3 — Architecture Data / Contrôle</a></li>
+    </ol>
+  </div>
+  <div class="meta" style="justify-content:center;">
+    <div><div class="label">Plateforme</div><div class="value">Holybro X500 V2</div></div>
+    <div><div class="label">Contrôleur</div><div class="value">Pixhawk 6C — ArduPilot</div></div>
+    <div><div class="label">Companion</div><div class="value">Jetson Orin Nano</div></div>
+    <div><div class="label">Radio / Vidéo</div><div class="value">SIYI MK32</div></div>
+  </div>
+  <p class="footer-note">Document technique — révision A — généré pour maintenance terrain</p>
+</section>
+
+<!-- SCHEMA 1 : ALIMENTATION -->
+<section class="page" id="alim">
+  <h2>1 — Architecture Alimentation</h2>
+  <p class="subtitle">Distribution de puissance depuis la batterie 4S jusqu'à chaque composant</p>
+
+  <div class="meta">
+    <div><div class="label">Source</div><div class="value">Batterie 4S Li-ion 10Ah</div></div>
+    <div><div class="label">Tension</div><div class="value">14,4 V nom / 16,8 V plein</div></div>
+    <div><div class="label">Mesure V/I</div><div class="value">PM02 V3</div></div>
+    <div><div class="label">PDB</div><div class="value">Matek FCHUB-12S</div></div>
+  </div>
+
+  <div class="diagram-wrap">
+    <pre class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'14px','lineColor':'#555'}}}%%
+flowchart TD
+    BAT["🔋 BATTERIE 4S Li-ion 10Ah<br/>Racepow Samsung 50S<br/>14.4V nom / 16.8V plein<br/><b>XT60 femelle</b>"]
+    PM02["PM02 V3<br/>Power Module<br/>mesure V/I"]
+    YSPLIT(["Y SPLITTER<br/>jonction 3-en-1 soudee"])
+    BECSIYI["BEC SIYI 4-18S<br/>sortie 12V"]
+    MK32["📡 MK32 AIR UNIT"]
+    FCHUB["⚡ FCHUB-12S<br/>PDB centrale<br/>+ condo 390uF/63V"]
+    ESC1["ESC1 Tekko32"]
+    ESC2["ESC2 Tekko32"]
+    ESC3["ESC3 Tekko32"]
+    ESC4["ESC4 Tekko32"]
+    M1(["Moteur 1"])
+    M2(["Moteur 2"])
+    M3(["Moteur 3"])
+    M4(["Moteur 4"])
+    PERF["PERFBOARD 12V/GND<br/>depuis BEC 12V FCHUB"]
+    PM12S["PM12S 4A<br/>BEC regle 12V"]
+    JETSON["🧠 JETSON ORIN NANO<br/>jack DC 5.5x2.5"]
+    R1M["📷 SIYI R1M<br/><b>12V STRICT</b>"]
+    SWBLOX["🌐 SwitchBlox"]
+    A8["🎥 SIYI A8 mini<br/>11-25V OK"]
+
+    BAT -->|"XT60 M-F · 12 AWG ~15cm"| PM02
+    PM02 -->|"sortie XT60 F · 12 AWG"| YSPLIT
+    YSPLIT -->|"Branche A · 14 AWG + XT60 F"| BECSIYI
+    BECSIYI -->|"XT30 · 12V regule"| MK32
+    YSPLIT -->|"Branche B · 12 AWG fils nus<br/>soudes sur BAT+/-"| FCHUB
+    FCHUB -->|"12 AWG · pads ESC"| ESC1 --> M1
+    FCHUB -->|"12 AWG"| ESC2 --> M2
+    FCHUB -->|"12 AWG"| ESC3 --> M3
+    FCHUB -->|"12 AWG"| ESC4 --> M4
+    FCHUB -->|"pad 12V+G · 14 AWG"| PERF
+    PERF -->|"18 AWG"| R1M
+    PERF -->|"18 AWG"| SWBLOX
+    FCHUB -->|"pad VBat+G · 14 AWG"| A8
+    FCHUB -->|"pad VBat+G · 14 AWG"| PM12S
+    PM12S -->|"jack DC · 12V"| JETSON
+
+    classDef batt fill:#ffe0e0,stroke:#cc0000,stroke-width:2px,color:#000
+    classDef power fill:#fff0d0,stroke:#cc8800,stroke-width:2px,color:#000
+    classDef reg fill:#e0f0ff,stroke:#0066cc,stroke-width:2px,color:#000
+    classDef load fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px,color:#000
+    classDef motor fill:#f0f0f0,stroke:#666,stroke-width:1.5px,color:#000
+    class BAT batt
+    class PM02,YSPLIT,FCHUB power
+    class BECSIYI,PM12S,PERF reg
+    class JETSON,R1M,SWBLOX,A8,MK32 load
+    class ESC1,ESC2,ESC3,ESC4,M1,M2,M3,M4 motor
+    </pre>
+  </div>
+
+  <div class="legend">
+    <strong>Légende câbles</strong>
+    <ul>
+      <li><code>12 AWG</code> — tronc de puissance principal (Y splitter, ESC)</li>
+      <li><code>14 AWG</code> — sorties FCHUB (12V et VBat vers accessoires)</li>
+      <li><code>18 AWG</code> — départs perfboard 12V (R1M, SwitchBlox)</li>
+      <li><code>XT60</code> — connecteurs batterie / PM02 · <code>XT30</code> — entrée BEC SIYI</li>
+    </ul>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ Points de vigilance</strong>
+    <ul style="margin:6px 0 0;padding-left:20px;">
+      <li><b>R1M = 12V STRICT</b> — jamais en VBat (16,8 V) sinon destruction.</li>
+      <li>Condensateur 390 µF / 63 V soudé sur les pads BAT+/− du FCHUB (anti-pics).</li>
+      <li>A8 mini accepte 11–25,2 V → alim directe VBat OK.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SCHEMA 2 : RESEAU -->
+<section class="page" id="reseau">
+  <h2>2 — Architecture Réseau / Vidéo</h2>
+  <p class="subtitle">Réseau IP Ethernet 192.168.144.0/24 — flux vidéo des caméras + télémétrie</p>
+
+  <div class="meta">
+    <div><div class="label">Switch</div><div class="value">SwitchBlox (L2, auto-MDIX)</div></div>
+    <div><div class="label">Sous-réseau</div><div class="value">192.168.144.0/24</div></div>
+    <div><div class="label">Caméra gimbal</div><div class="value">A8 mini — .25</div></div>
+    <div><div class="label">Caméra nadir</div><div class="value">R1M — .26</div></div>
+  </div>
+
+  <div class="diagram-wrap">
+    <pre class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'14px','lineColor':'#555'}}}%%
+flowchart TD
+    GU["📱 MK32 Ground Unit<br/>tablette · SIYI FPV + QGC<br/>IP 192.168.144.20"]
+    AU["📡 MK32 AIR UNIT<br/>IP 192.168.144.11<br/>port Ethernet 8-pin"]
+    SWBLOX["🌐 SwitchBlox ArduPilot<br/>5 ports JST-GH 4-pin<br/>10/100 · auto-MDIX"]
+    JETSON["🧠 JETSON ORIN NANO<br/>IP .100 statique · RJ45"]
+    A8["🎥 SIYI A8 mini<br/>IP .25 · RTSP :8554/main.264"]
+    R1M["📷 SIYI R1M nadir<br/>IP .26 · RTSP :8554/main.264"]
+    SPARE(["Port 5 : LIBRE"])
+
+    AU <-->|"📶 Radio HD Long Range 2.4GHz<br/>video + telemetrie + RC"| GU
+    AU <-->|"Port 4 · cable custom JST-GH 4p"| SWBLOX
+    SWBLOX <-->|"Port 1 · JST-GH 4p / RJ45<br/>(fourni)"| JETSON
+    SWBLOX <-->|"Port 2 · cable custom"| A8
+    SWBLOX <-->|"Port 3 · cable custom"| R1M
+    SWBLOX -.-> SPARE
+
+    classDef ground fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+    classDef air fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000
+    classDef switch fill:#fff3e0,stroke:#e65100,stroke-width:2.5px,color:#000
+    classDef cam fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px,color:#000
+    classDef compute fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
+    classDef spare fill:#f5f5f5,stroke:#999,stroke-width:1px,stroke-dasharray:4,color:#666
+    class GU ground
+    class AU air
+    class SWBLOX switch
+    class A8,R1M cam
+    class JETSON compute
+    class SPARE spare
+    </pre>
+  </div>
+
+  <div class="legend">
+    <strong>Adressage IP</strong>
+    <table>
+      <tr><th>Équipement</th><th>IP</th><th>Port SwitchBlox</th><th>Flux RTSP</th></tr>
+      <tr><td>Jetson Orin Nano</td><td>192.168.144.100</td><td>Port 1</td><td>—</td></tr>
+      <tr><td>SIYI A8 mini</td><td>192.168.144.25</td><td>Port 2</td><td>rtsp://192.168.144.25:8554/main.264</td></tr>
+      <tr><td>SIYI R1M</td><td>192.168.144.26</td><td>Port 3</td><td>rtsp://192.168.144.26:8554/main.264</td></tr>
+      <tr><td>MK32 Air Unit</td><td>192.168.144.11</td><td>Port 4</td><td>passerelle radio → sol</td></tr>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ Câblage SIYI</strong>
+    <ul style="margin:6px 0 0;padding-left:20px;">
+      <li>Ne <b>PAS croiser</b> les paires : RX+→RX+, RX−→RX−, TX+→TX+, TX−→TX−.</li>
+      <li>Le SwitchBlox a l'auto-MDIX (corrige seul), mais respecter la convention côté caméras.</li>
+      <li>R1M reconfiguré sur <code>.26</code> via <code>setip.txt</code> (format INI <code>[NET_CONFIG]</code>) pour éviter le conflit avec l'A8 (.25).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SCHEMA 3 : DATA -->
+<section class="page" id="data">
+  <h2>3 — Architecture Data / Contrôle</h2>
+  <p class="subtitle">Liaisons série, signaux moteurs et capteurs — hub central Pixhawk 6C</p>
+
+  <div class="meta">
+    <div><div class="label">Contrôleur</div><div class="value">Pixhawk 6C</div></div>
+    <div><div class="label">Firmware</div><div class="value">ArduPilot Copter · BDShot</div></div>
+    <div><div class="label">GPS</div><div class="value">M9N (10-pin, GPS1)</div></div>
+    <div><div class="label">UART logique</div><div class="value">3.3 V (croiser TX↔RX)</div></div>
+  </div>
+
+  <div class="diagram-wrap">
+    <pre class="mermaid">
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'13px','lineColor':'#555'}}}%%
+flowchart TD
+    PIX["🎛️ PIXHAWK 6C<br/>Flight Controller<br/>ArduPilot Copter (BDShot)"]
+    PM02["PM02 V3<br/>alim + mesure V/I"]
+    GPS["🛰️ M9N GPS<br/>GPS+compass+safety+buzzer+LED"]
+    MK32["📡 MK32 Air Unit"]
+    JETSON["🧠 Jetson Orin Nano"]
+    RESP["🎤 ReSpeaker 4-Mic"]
+    A8["🎥 SIYI A8 mini gimbal"]
+    FCHUB["⚡ FCHUB-12S<br/>pads S1-S4 + TLM"]
+    ESC["4x ESC Tekko32"]
+    MOT(["4x Moteurs MN3110-17"])
+    LUM["💡 2x Lumenier OVERT"]
+
+    PM02 -->|"POWER1 · JST-GH 6p (fourni)<br/>5.2V + V/I analog"| PIX
+    GPS -->|"GPS1 · cable 10-pin (fourni)<br/>UART + I2C"| PIX
+    MK32 -->|"PPM/SBUS · cable 3p (fourni)<br/>commandes pilote"| PIX
+    MK32 <-->|"TELEM1 · UART 4p (fourni)<br/>MAVLink GCS 115200"| PIX
+    PIX <-->|"TELEM2 · Dupont 3 fils<br/>MAVLink local 921600"| JETSON
+    PIX <-->|"TELEM3 · cable UART SIYI<br/>controle gimbal 115200"| A8
+    PIX -->|"I/O PWM OUT 1-4 · BDShot<br/>torsade signal+GND"| FCHUB
+    FCHUB -->|"pads S1-S4 · signal court"| ESC
+    ESC --> MOT
+    ESC -->|"fil TLM (1 fil) · GND commun"| FCHUB
+    FCHUB -->|"GPS2 RX · telemetrie ESC"| PIX
+    PIX -->|"FMU PWM 9-10 · signal+GND<br/>(alim LED via FCHUB)"| LUM
+    RESP -->|"USB-A · audio"| JETSON
+
+    classDef fc fill:#ffe0b2,stroke:#e65100,stroke-width:3px,color:#000
+    classDef sensor fill:#e3f2fd,stroke:#1565c0,stroke-width:1.5px,color:#000
+    classDef radio fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000
+    classDef compute fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
+    classDef motor fill:#f0f0f0,stroke:#666,stroke-width:1.5px,color:#000
+    classDef acc fill:#fff9c4,stroke:#f9a825,stroke-width:1.5px,color:#000
+    class PIX fc
+    class PM02,GPS sensor
+    class MK32 radio
+    class JETSON,RESP compute
+    class FCHUB,ESC,MOT motor
+    class A8,LUM acc
+    </pre>
+  </div>
+
+  <div class="legend">
+    <strong>Allocation des ports Pixhawk 6C</strong>
+    <table>
+      <tr><th>Port</th><th>Composant</th><th>Câble</th><th>Config ArduPilot</th></tr>
+      <tr><td>POWER1</td><td>PM02 V3</td><td>JST-GH 6p (fourni)</td><td>BATT_MONITOR=4</td></tr>
+      <tr><td>GPS1</td><td>M9N GPS</td><td>10-pin (fourni)</td><td>GPS_TYPE=1</td></tr>
+      <tr><td>GPS2</td><td>Télémétrie ESC</td><td>1 fil (RX)</td><td>SERIAL_PROTOCOL=16</td></tr>
+      <tr><td>TELEM1</td><td>MK32 Datalink</td><td>UART 4p (fourni)</td><td>SERIAL1=2, baud 115</td></tr>
+      <tr><td>TELEM2</td><td>Jetson</td><td>Dupont 3 fils</td><td>SERIAL2=2, baud 921</td></tr>
+      <tr><td>TELEM3</td><td>SIYI A8 mini</td><td>UART SIYI</td><td>SToRM32/SIYI, baud 115</td></tr>
+      <tr><td>PPM/SBUS</td><td>MK32 SBus</td><td>3p (fourni)</td><td>RC auto</td></tr>
+      <tr><td>I/O PWM 1-4</td><td>ESC via FCHUB</td><td>signal + GND</td><td>MOT_PWM_TYPE=6</td></tr>
+      <tr><td>FMU PWM 9-10</td><td>Lumenier OVERT ×2</td><td>signal + GND</td><td>SERVO9/10_FUNCTION</td></tr>
+    </table>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ Points de vigilance</strong>
+    <ul style="margin:6px 0 0;padding-left:20px;">
+      <li><b>BDShot via FCHUB</b> : fils courts (&lt;10 cm), signal+GND torsadés, soudures propres. Valider le retour RPM au 1er test.</li>
+      <li><b>Télémétrie ESC</b> : 1 seul fil suffit (GND déjà commun via le câblage signal PWM).</li>
+      <li>Croisement <b>TX↔RX</b> obligatoire sur toutes les liaisons UART.</li>
+      <li>Composants autonomes (sans liaison Pixhawk) : Vifly Strobe ×2 (batterie interne), R1M (caméra fixe).</li>
+    </ul>
+  </div>
+
+  <p class="footer-note">Fichiers sources Mermaid (.mmd) éditables fournis séparément · Pour modifier : éditer le texte et re-rendre</p>
+</section>
+
+</body>
+</html>
