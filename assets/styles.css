@@ -463,6 +463,62 @@ pre {
   line-height: 1.7;
 }
 
+
+.year-stack {
+  display: grid;
+  gap: 22px;
+}
+
+.year-block {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) 1fr;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(10, 16, 23, 0.72);
+}
+
+.year-block.highlight {
+  border-color: rgba(84, 216, 255, 0.42);
+  background: rgba(84, 216, 255, 0.07);
+}
+
+.year-title {
+  position: sticky;
+  top: 92px;
+  align-self: start;
+  padding: 18px;
+  border: 1px solid rgba(98, 230, 165, 0.24);
+  border-radius: 8px;
+  background: rgba(15, 23, 32, 0.88);
+}
+
+.year-title span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.year-title h3 {
+  margin-bottom: 0;
+}
+
+.project-grid.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-grid.compact .project-card.featured {
+  grid-column: span 2;
+}
+
+.stage-row .project-card {
+  min-height: 190px;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -587,11 +643,21 @@ pre {
   .architecture-strip,
   .evidence-grid,
   .skill-grid,
-  .project-grid {
+  .project-grid,
+  .project-grid.compact {
     grid-template-columns: 1fr;
   }
 
-  .project-card.featured {
+  .year-block {
+    grid-template-columns: 1fr;
+  }
+
+  .year-title {
+    position: static;
+  }
+
+  .project-card.featured,
+  .project-grid.compact .project-card.featured {
     grid-column: auto;
     grid-template-columns: 1fr;
   }
