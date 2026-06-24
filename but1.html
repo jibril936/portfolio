@@ -4,83 +4,168 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BUT1 | Jibril Samahri</title>
-  <meta name="description" content="Premiere annee de BUT GEII : SAE, electronique, mesures, prototypes et robot suiveur de ligne.">
+  <meta name="description" content="Premiere annee de BUT GEII : SAE immersion electronique, multimetre numerique, systeme multi-cartes et robot suiveur de ligne CNY70.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="pcb-bg" aria-hidden="true"></div>
   <header class="nav">
     <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
     <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
     <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">// Profil</a><a class="active" href="but1.html">// BUT1</a><a href="but2.html">// BUT2</a><a href="but3.html">// BUT3</a><a href="projets.html">// Projets</a><a href="contact.html">// Contact</a>
+      <a href="index.html">Profil</a>
+      <a class="active" href="but1.html">BUT1</a>
+      <a href="but2.html">BUT2</a>
+      <a href="but3.html">BUT3</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="page-hero wrap">
-      <p class="section-tag">Collection - Premiere annee</p>
-      <h1>BUT1 - <strong>fondamentaux GEII</strong></h1>
-      <p class="lead">Premiere annee centree sur les bases : composants, mesure, soudure, analyse fonctionnelle, prototypes, capteurs et premiers livrables techniques.</p>
+      <p class="section-tag">Collection — Premiere annee</p>
+      <h1>BUT1 — <strong>fondamentaux GEII</strong></h1>
+      <p class="lead">Premiere annee centree sur les bases du metier : lecture de schemas, soudure, choix de composants, analyse fonctionnelle, prototypes et premiers livrables techniques.</p>
       <div class="quick-grid">
-        <a href="#sae0">SAE 0</a>
-        <a href="#sae1">SAE 1</a>
-        <a href="#sae2">SAE 2</a>
-        <a href="#sae3">Robot suiveur</a>
+        <a href="#sae0">SAE 0 — Immersion</a>
+        <a href="#sae1">SAE 1 — Multimetre</a>
+        <a href="#sae2">SAE 2 — Systeme multi-cartes</a>
+        <a href="#sae3">SAE 3 — Robot suiveur</a>
       </div>
     </section>
 
+    <!-- SAE 0 ─────────────────────────────────────────────── -->
     <section class="wrap section project-detail" id="sae0">
-      <div class="detail-head"><span>SAE 0</span><h2>Premiere approche electronique</h2></div>
+      <div class="detail-head">
+        <span>SAE 0 — Premiere experience en GEII</span>
+        <h2>Projet d'immersion — 1re annee</h2>
+      </div>
       <div class="detail-grid">
-        <img src="assets/media/mahara/sae0-1.jpg" alt="Carte electronique SAE 0">
+        <div class="gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <img src="assets/media/mahara/sae0-1.jpg" alt="Carte electronique SAE 0 — cote composants">
+          <img src="assets/media/mahara/sae0-2.jpg" alt="Carte electronique SAE 0 — emplacement nano">
+        </div>
         <div class="card prose">
-          <p>Cette premiere SAE m'a permis de prendre en main les manipulations de base : observation d'un montage, identification des composants, mesures, cablage et restitution d'un resultat technique.</p>
-          <p>Le travail etait surtout oriente vers la methode : comprendre un systeme simple, verifier son comportement et expliquer les resultats obtenus.</p>
-          <div class="chips"><span>Mesure</span><span>Cablage</span><span>Composants</span><span>Methodologie</span></div>
+          <p>Durant les <strong>trois jours d'atelier</strong> consacres a ce premier projet, j'ai quitte la theorie pour plonger dans le concret :</p>
+          <ul>
+            <li><strong>Lire et comprendre un schema electrique</strong> : dechiffrer symboles, reperer liaisons d'alimentation et de signal, anticiper les points critiques.</li>
+            <li><strong>Choisir les composants</strong> : comparer boitiers, tolerances et puissances dissipees afin d'assembler un circuit a la fois fiable et economique.</li>
+            <li><strong>Apprendre la soudure</strong> : poser des composants traversants et CMS, maitriser la temperature du fer et la bonne quantite d'etain pour garantir solidite et conductivite.</li>
+          </ul>
+          <p>Cette courte immersion m'a donne un apercu realiste du terrain industriel : gestion du temps, controle qualite des l'assemblage et premiers tests de mise sous tension. Elle a surtout pose les bases de mon savoir-faire technique, sur lesquelles se sont appuyes tous les projets suivants.</p>
+          <div class="chips"><span>Schemas electriques</span><span>Soudure traversant</span><span>Soudure CMS</span><span>Composants</span><span>Mise sous tension</span></div>
         </div>
       </div>
     </section>
 
+    <!-- SAE 1 ─────────────────────────────────────────────── -->
     <section class="wrap section project-detail" id="sae1">
-      <div class="detail-head"><span>SAE 1</span><h2>Multimetre numerique</h2></div>
+      <div class="detail-head">
+        <span>SAE 1 — Informatique embarquee</span>
+        <h2>Conception d'un multimetre numerique</h2>
+      </div>
       <div class="detail-grid reverse">
-        <img src="assets/media/mahara/sae1-1.jpg" alt="Carte de multimetre numerique">
+        <div class="gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <img src="assets/media/mahara/sae1-1.jpg" alt="Multimetre numerique — face avant">
+          <img src="assets/media/mahara/sae1-2.jpg" alt="Multimetre numerique — face arriere">
+        </div>
         <div class="card prose">
-          <p>Projet oriente informatique embarquee et mesure. Le travail a consiste a souder les composants sur PCB puis a comprendre la logique de mesure de tension, courant et resistance.</p>
-          <p>Cette SAE a renforce les bases de diagnostic : reperer une erreur de soudure, tester la continuite, comprendre un dysfonctionnement et corriger progressivement.</p>
-          <div class="chips"><span>Soudure</span><span>Firmware</span><span>PCB</span><span>7 segments</span></div>
+          <p>Premiere SAE majoritairement orientee informatique embarquee. Ce projet m'a demande de souder l'ensemble des composants (resistances, amplis-op, diviseurs, microcontroleur) sur un PCB pre-grave, puis d'ecrire le firmware qui mesure tension, courant et resistance et l'affiche par multiplexage de LED 7 segments.</p>
+          <h3 style="font-size:13px;margin-top:18px;color:var(--txt)">Reperes sur le PCB</h3>
+          <ul class="spec-list">
+            <li><span>A — Connecteurs jack 4 mm</span><strong>Points d'entree pour les sondes V, A et reference commune</strong></li>
+            <li><span>B — Reseau de resistances CMS</span><strong>Ponts diviseurs pour ramener la tension dans la plage 0-3,3 V de l'ADC</strong></li>
+            <li><span>C — Matrice CMS centrale (16 boitiers)</span><strong>ADC + reseau d'ampli-op rail-to-rail : conditionnement avant numerisation</strong></li>
+            <li><span>D — Fils rouge/noir souder</span><strong>Correctif de routage de derniere minute pour la reference de masse</strong></li>
+          </ul>
+          <div class="chips"><span>Soudure PCB</span><span>Firmware embarque</span><span>LED 7 segments</span><span>Ampli-op</span><span>ADC</span><span>Multiplexage</span></div>
         </div>
       </div>
     </section>
 
+    <!-- SAE 2 ─────────────────────────────────────────────── -->
     <section class="wrap section project-detail" id="sae2">
-      <div class="detail-head"><span>SAE 2</span><h2>Prototype et systeme</h2></div>
+      <div class="detail-head">
+        <span>SAE 2 — Systeme electronique reparti</span>
+        <h2>Prototype multi-cartes</h2>
+      </div>
+
       <div class="detail-grid">
-        <img src="assets/media/mahara/sae2-1.jpg" alt="Prototype de SAE 2">
+        <img src="assets/media/mahara/sae2-1.jpg" alt="Systeme electronique multi-cartes">
         <div class="card prose">
-          <p>Projet de mise en pratique autour d'un systeme compose de plusieurs sous-ensembles. L'objectif etait de comprendre comment les capteurs, les traitements et les actionneurs interagissent.</p>
-          <p>Le travail a mis en avant la validation par essais successifs : tester une fonction, observer, corriger, puis integrer dans un ensemble plus complet.</p>
-          <div class="chips"><span>Capteurs</span><span>Actionneurs</span><span>Tests</span><span>Integration</span></div>
+          <p>L'equipe devait realiser un petit systeme electronique reparti sur plusieurs cartes, chacune assurant une fonction (alimentation, filtrage, conversion, comparaison, sortie…). Nous disposions uniquement d'un schema de principe, de plaques de prototypage et d'un lot de composants (AOP, diodes, LED, condensateurs, resistances).</p>
+          <p><strong>Objectif :</strong> assembler six modules, les tester un par un, puis les chaîner pour obtenir un fonctionnement global coherent.</p>
+          <div class="chips"><span>AOP</span><span>Filtre actif</span><span>Comparateur</span><span>Prototypage</span><span>Chainage de modules</span></div>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:20px">
+        <div class="card prose">
+          <h3>Analyse fonctionnelle</h3>
+          <p>Avant de toucher au fer a souder, nous avons reproduit le schema bloc :</p>
+          <ul class="spec-list">
+            <li><span>Alimentation</span><strong>Stabilise le +5 V</strong></li>
+            <li><span>Convertisseur</span><strong>Adapte le signal de capteur</strong></li>
+            <li><span>Filtre actif</span><strong>Supprime le bruit haute frequence</strong></li>
+            <li><span>Comparateur</span><strong>Detecte le seuil utile</strong></li>
+            <li><span>Commande logique</span><strong>Gere la LED d'etat</strong></li>
+            <li><span>Sortie</span><strong>Envoie le resultat vers l'utilisateur</strong></li>
+          </ul>
+        </div>
+        <div class="card prose">
+          <h3>Problemes rencontres et corrections</h3>
+          <ul class="spec-list">
+            <li><span>Court-circuit +5 V/GND</span><strong>Exces d'etain → retrait + nettoyage a l'alcool</strong></li>
+            <li><span>Signal inverse</span><strong>Diode montee a l'envers → dessoudage, inversion de polarite</strong></li>
+            <li><span>Comparateur sans reponse</span><strong>Resistance oubliee → ajout R = 47 kΩ</strong></li>
+            <li><span>LED toujours eteinte</span><strong>Masse absente → fil volant noir ajoute</strong></li>
+          </ul>
+          <p>Chaque correction passait par un test de continuite au multimetre, puis un essai fonctionnel sous 5 V avant d'integrer le bloc suivant.</p>
         </div>
       </div>
     </section>
 
+    <!-- SAE 3 ─────────────────────────────────────────────── -->
     <section class="wrap section project-detail" id="sae3">
-      <div class="detail-head"><span>SAE 3</span><h2>Robot suiveur de ligne</h2></div>
-      <div class="detail-grid reverse">
-        <img src="assets/media/mahara/sae3-2.png" alt="Schema CNY70 du robot suiveur de ligne">
+      <div class="detail-head">
+        <span>SAE 3 — Robotique — 3 semaines, groupes de 3</span>
+        <h2>Robot suiveur de ligne</h2>
+      </div>
+
+      <div class="grid three" style="margin-bottom:20px">
+        <img src="assets/media/mahara/sae3-cny.png"             alt="Schema CNY70 — capteur photo-reflectif" style="width:100%;border-radius:var(--radius);border:1px solid var(--line)">
+        <img src="assets/media/mahara/sae3-cny-fonctionnement.png" alt="Fonctionnement CNY70"                style="width:100%;border-radius:var(--radius);border:1px solid var(--line)">
+        <img src="assets/media/mahara/sae3-cny-simple.png"      alt="Schema CNY70 simplifie"                style="width:100%;border-radius:var(--radius);border:1px solid var(--line)">
+      </div>
+
+      <div class="grid two">
         <div class="card prose">
-          <p>Lors de cette SAE, le robot devait suivre une ligne en utilisant des capteurs photoreflectifs CNY70. Mon role portait notamment sur la partie capteurs, les tests de continuite et la comprehension du comportement de suivi.</p>
-          <p>Le projet a mobilise l'analyse fonctionnelle, le GRAFCET, la realisation de prototypes et la redaction d'un dossier de fabrication.</p>
-          <div class="chips"><span>CNY70</span><span>Robotique</span><span>GRAFCET</span><span>KiCad</span></div>
-          <p><a class="btn ghost" href="assets/docs/robot-suiveur-ligne.pdf">Lire le rapport</a></p>
+          <h3>Ma mission : capteurs photo-reflectifs</h3>
+          <p>Dans ce projet de 3 semaines, chaque membre avait une tache precise : l'un gerait le LIDAR, un autre la PIXY, et moi je m'occupais des <strong>capteurs photo-reflectifs CNY70</strong>.</p>
+          <p>Mon role portait sur la partie capteurs, les tests de continuite et la comprehension du comportement de suivi de ligne avec plus ou moins de difficulte.</p>
+          <div class="chips"><span>CNY70</span><span>Suivi de ligne</span><span>LIDAR</span><span>PIXY</span><span>Tests de continuite</span></div>
+        </div>
+        <div class="card prose">
+          <h3>Apprentissages critiques valides</h3>
+          <ul>
+            <li><strong>AC12.02</strong> — Identifier un dysfonctionnement lors du soudage par tests de continuite</li>
+            <li><strong>AC12.03</strong> — Decrire un dysfonctionnement (court-circuit, composant polarise a l'envers)</li>
+            <li><strong>AC11.01</strong> — Produire une analyse fonctionnelle (GRAFCET pour le parcours precis)</li>
+            <li><strong>AC11.02</strong> — Realiser un prototype (cartes avec CNY70 avant fabrication sur KiCad)</li>
+            <li><strong>AC11.03</strong> — Rediger un dossier de fabrication a partir d'un dossier de conception</li>
+          </ul>
+          <p><a class="btn ghost" href="assets/docs/robot-suiveur-ligne.pdf">Rapport final (PDF)</a></p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap footer-grid"><p>© 2026 Mohamed Jibril Samahri</p><div><a href="but2.html">BUT2 →</a></div></div></footer>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Mohamed Jibril Samahri</p>
+      <div><a href="but2.html">BUT2 →</a></div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
 </body>
 </html>

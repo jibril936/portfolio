@@ -4,117 +4,159 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jibril Samahri | Portfolio BUT GEII ESE</title>
-  <meta name="description" content="Portfolio de Jibril Samahri, etudiant en BUT GEII parcours Electronique et Systemes Embarques. Projets, stages, drone, IA et systemes embarques.">
+  <meta name="description" content="Portfolio de Mohamed Jibril Samahri, etudiant en BUT GEII parcours ESE a l'IUT de Troyes. Electronique, systemes embarques, drone, IA.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="pcb-bg" aria-hidden="true"></div>
   <header class="nav">
     <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
     <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
     <nav class="nav-links" aria-label="Navigation principale">
-      <a class="active" href="index.html">// Profil</a>
-      <a href="but1.html">// BUT1</a>
-      <a href="but2.html">// BUT2</a>
-      <a href="but3.html">// BUT3</a>
-      <a href="projets.html">// Projets</a>
-      <a href="contact.html">// Contact</a>
+      <a class="active" href="index.html">Profil</a>
+      <a href="but1.html">BUT1</a>
+      <a href="but2.html">BUT2</a>
+      <a href="but3.html">BUT3</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap">
-      <div class="hero-grid">
+
+    <!-- ─── HERO ─────────────────────────────────────────── -->
+    <section class="hero-alt">
+      <div class="wrap hero-alt-grid">
+
+        <figure class="portrait-square">
+          <img src="assets/media/portrait.jpg" alt="Mohamed Jibril Samahri">
+        </figure>
+
         <div>
-          <p class="status"><span></span>SYSTEMES EMBARQUES · BUT GEII ESE</p>
-          <h1>Mohamed Jibril <strong>Samahri</strong></h1>
-          <p class="role">Electronique, robotique, drone, IA et interfaces embarquees</p>
-          <p class="lead">Etudiant en BUT Genie Electrique et Informatique Industrielle, parcours Electronique et Systemes Embarques. Ce portfolio reprend mes projets de formation, mes stages et les travaux recents autour du drone ARODE.</p>
+          <div class="formation-tag">
+            <span class="hi">BUT GEII</span>
+            <span class="sep">·</span>
+            <span>Electronique et Systemes Embarques</span>
+            <span class="sep">·</span>
+            <span>IUT de Troyes</span>
+            <span class="sep">·</span>
+            <span>2024 — 2026</span>
+          </div>
+
+          <h1 class="hero-name">
+            Mohamed Jibril
+            <em>Samahri</em>
+          </h1>
+
+          <p class="hero-subtitle">
+            Electronique, robotique, systemes embarques et IA appliquee au drone. Trois annees de BUT GEII entre la soudure du premier PCB et l'integration d'une architecture drone ouverte au LIST3N.
+          </p>
+
+          <div class="skill-pills">
+            <span class="accent">C / C++</span>
+            <span class="accent">Python · PyQt6</span>
+            <span class="accent">VHDL / FPGA</span>
+            <span>Arduino · RPi · Jetson</span>
+            <span>Pixhawk · ArduPilot</span>
+            <span>YOLO · DEIM · RT-DETR</span>
+            <span>Git · I2C · PWM</span>
+          </div>
+
           <div class="actions">
-            <a class="btn primary" href="projets.html">Explorer les projets</a>
-            <a class="btn ghost" href="assets/docs/cv-fr.pdf">CV francais</a>
+            <a class="btn primary" href="projets.html">Voir tous les projets</a>
+            <a class="btn ghost" href="assets/docs/cv-fr.pdf">Telecharger le CV</a>
           </div>
         </div>
-        <figure class="portrait-card">
-          <img src="assets/media/portrait.jpg" alt="Portrait de Jibril Samahri">
-        </figure>
+
       </div>
     </section>
 
+    <!-- ─── CHIFFRES CLES ────────────────────────────────── -->
     <section class="wrap section">
       <div class="telemetry">
         <article><strong>3</strong><span>Annees BUT GEII</span></article>
-        <article><strong>2</strong><span>Stages lies au drone</span></article>
+        <article><strong>2</strong><span>Stages — LIST3N UTT</span></article>
         <article><strong>10+</strong><span>Projets et SAE</span></article>
-        <article><strong>2026</strong><span>Stage ARODE / drone</span></article>
+        <article><strong>2e</strong><span>Place concours Cachan</span></article>
       </div>
     </section>
 
+    <!-- ─── PARCOURS TIMELINE ─────────────────────────────── -->
     <section class="wrap section">
-      <p class="section-tag">01 - A propos</p>
-      <h2 class="section-title">Profil technique</h2>
+      <p class="section-tag">01 — Parcours</p>
+      <h2 class="section-title">Trois annees de formation</h2>
+      <div class="timeline">
+        <a class="tl-item" href="but1.html">
+          <span class="tl-dot"></span>
+          <p class="tl-year">2023 — 2024</p>
+          <p class="tl-title">BUT 1 — Fondamentaux</p>
+          <p class="tl-desc">Soudure, schemas, composants, mesure et premier robot suiveur de ligne.</p>
+          <span class="tl-link">Explorer BUT1 →</span>
+        </a>
+        <a class="tl-item" href="but2.html">
+          <span class="tl-dot"></span>
+          <p class="tl-year">2024 — 2025</p>
+          <p class="tl-title">BUT 2 — Robotique & FPGA</p>
+          <p class="tl-desc">Voiture autonome (2e Cachan), carte IR, FPGA brushless, stage drone ARODE.</p>
+          <span class="tl-link">Explorer BUT2 →</span>
+        </a>
+        <a class="tl-item" href="but3.html">
+          <span class="tl-dot"></span>
+          <p class="tl-year">2025 — 2026</p>
+          <p class="tl-title">BUT 3 — Embarque & IA</p>
+          <p class="tl-desc">Kart Dashboard PyQt6, stage ARODE — architecture drone X500 + detection IA.</p>
+          <span class="tl-link">Explorer BUT3 →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── PROFIL TECHNIQUE ──────────────────────────────── -->
+    <section class="wrap section">
+      <p class="section-tag">02 — Profil</p>
+      <h2 class="section-title">Ce que je sais faire</h2>
       <div class="grid two">
-        <div class="prose card">
-          <p>Mon parcours en GEII m'a progressivement amene de l'electronique de base vers les systemes embarques complets : capteurs, cartes, programmation, robotique, logique numerique, interfaces et integration materielle.</p>
-          <p>En troisieme annee, mon travail s'est surtout oriente vers les drones intelligents et l'integration systeme : architecture drone, alimentation, communication, flux video, IA de detection et exploitation dans une interface.</p>
+        <div class="card prose">
+          <p>Mon parcours en GEII m'a amene progressivement de l'electronique de base vers les systemes embarques complets : capteurs, cartes, programmation, robotique, logique numerique, interfaces et integration materielle.</p>
+          <p>En troisieme annee, le travail s'est oriente vers les drones intelligents et l'integration systeme : architecture X500, alimentation, communication, flux video, IA de detection et exploitation dans une interface operateur.</p>
+          <p>Le fil conducteur : comprendre comment un composant physique, un logiciel embarque et une chaine de traitement peuvent fonctionner ensemble de maniere fiable.</p>
         </div>
         <div class="card">
-          <h3>// competences.json</h3>
+          <h3>Competences par domaine</h3>
           <ul class="spec-list">
-            <li><span>Embarque</span><strong>C / C++, Arduino, Raspberry Pi, Jetson, Pixhawk</strong></li>
-            <li><span>Logiciel</span><strong>Python, PyQt6, API, IHM, Git</strong></li>
-            <li><span>Electronique</span><strong>Mesure, cablage, alimentation, FPGA, I2C, PWM</strong></li>
-            <li><span>Domaines</span><strong>Drone, robotique, vision par ordinateur, IA</strong></li>
+            <li><span>Embarque</span><strong>C / C++, Arduino, Raspberry Pi 4, Jetson Orin Nano, Pixhawk 6C</strong></li>
+            <li><span>Logiciel</span><strong>Python, PyQt6, QThread, StateStore, Git, API REST</strong></li>
+            <li><span>Electronique</span><strong>PCB, soudure CMS, FPGA VHDL, I2C, PWM, alimentation</strong></li>
+            <li><span>IA / vision</span><strong>YOLO, DEIM/DEIMv2, RT-DETR, fine-tuning, inference</strong></li>
+            <li><span>Drone</span><strong>ArduPilot, SIYI, DJI SDK, ffmpeg, RTSP, GPS/OSD</strong></li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- ─── PROJETS RECENTS ───────────────────────────────── -->
     <section class="wrap section">
-      <p class="section-tag">02 - Navigation</p>
-      <h2 class="section-title">Parcours par annee</h2>
+      <p class="section-tag">03 — Projets recents</p>
+      <h2 class="section-title">A mettre en avant</h2>
       <div class="grid three">
-        <a class="card nav-card" href="but1.html">
-          <span>BUT1</span>
-          <h3>Fondamentaux GEII</h3>
-          <p>Mesures, soudure, composants, premiers prototypes et robot suiveur de ligne.</p>
+        <a class="project-card" href="but3.html#kart">
+          <img src="assets/media/kart-screen-1.png" alt="Kart Dashboard Pro V3 — interface">
+          <div><span>SAE BUT3</span><h3>Kart Dashboard Pro V3</h3><p>Application Python / PyQt6 pour Raspberry Pi 4 — architecture 4 couches, temps reel.</p></div>
         </a>
-        <a class="card nav-card" href="but2.html">
-          <span>BUT2</span>
-          <h3>Robotique, FPGA et stage</h3>
-          <p>Voiture autonome, robot eviteur, regulateur FPGA et premier stage drone.</p>
+        <a class="project-card" href="stage-but3.html">
+          <img src="assets/media/stage-x500-board.jpg" alt="Architecture drone X500 ARODE">
+          <div><span>Stage BUT3 — UTT LIST3N</span><h3>Projet ARODE — architecture drone</h3><p>X500, Pixhawk 6C, Jetson Orin Nano, SIYI, alimentation et tests progressifs.</p></div>
         </a>
-        <a class="card nav-card" href="but3.html">
-          <span>BUT3</span>
-          <h3>Dashboard et stage ARODE</h3>
-          <p>Kart Dashboard Pro V3 et stage de fin de BUT sur une architecture drone.</p>
+        <a class="project-card" href="but2.html#voiture">
+          <img src="assets/media/mahara/voiture-cachan.jpg" alt="Voiture autonome — 2e place Cachan">
+          <div><span>SAE BUT2 — 2e place Cachan</span><h3>Voiture autonome LiDAR</h3><p>C++/Qt, LiDAR 360°, TCP/IP, correction de trajectoire en temps reel.</p></div>
         </a>
       </div>
     </section>
 
-    <section class="wrap section">
-      <p class="section-tag">03 - Projets recents</p>
-      <h2 class="section-title">A mettre en avant</h2>
-      <div class="grid three">
-        <a class="project-card" href="but3.html#kart">
-          <img src="assets/media/kart-dashboard-ui.png" alt="Interface Kart Dashboard Pro V3">
-          <div><span>SAE BUT3</span><h3>Kart Dashboard Pro V3</h3><p>Application Python / PyQt6 pour afficher des donnees vehicule en temps reel.</p></div>
-        </a>
-        <a class="project-card" href="stage-but3.html">
-          <img src="assets/media/stage-x500-board.jpg" alt="Architecture drone X500">
-          <div><span>Stage BUT3</span><h3>Architecture drone ARODE</h3><p>Plateforme X500, Pixhawk, Jetson, SIYI, alimentation et tests progressifs.</p></div>
-        </a>
-        <a class="project-card" href="but2.html#stage">
-          <img src="assets/media/mahara/stage-drone-1.jpg" alt="Drone utilise pendant le stage BUT2">
-          <div><span>Stage BUT2</span><h3>Detection de victimes par drone</h3><p>Transmission video, GPS, DJI Mobile SDK, ffmpeg et tests terrain.</p></div>
-        </a>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
     <div class="wrap footer-grid">
-      <p>© 2026 Mohamed Jibril Samahri - BUT GEII ESE - IUT de Troyes</p>
+      <p>© 2026 Mohamed Jibril Samahri — BUT GEII ESE — IUT de Troyes</p>
       <div>
         <a href="projets.html">Projets</a>
         <a href="contact.html">Contact</a>

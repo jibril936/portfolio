@@ -4,55 +4,157 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BUT3 | Jibril Samahri</title>
-  <meta name="description" content="Troisieme annee de BUT GEII ESE : Kart Dashboard Pro V3 et stage ARODE drone.">
+  <meta name="description" content="Troisieme annee de BUT GEII ESE : Kart Dashboard Pro V3 (PyQt6, Raspberry Pi 4) et stage ARODE au LIST3N — architecture drone X500, detection IA.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="pcb-bg" aria-hidden="true"></div>
   <header class="nav">
     <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
     <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
     <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">// Profil</a><a href="but1.html">// BUT1</a><a href="but2.html">// BUT2</a><a class="active" href="but3.html">// BUT3</a><a href="projets.html">// Projets</a><a href="contact.html">// Contact</a>
+      <a href="index.html">Profil</a>
+      <a href="but1.html">BUT1</a>
+      <a href="but2.html">BUT2</a>
+      <a class="active" href="but3.html">BUT3</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="page-hero wrap">
-      <p class="section-tag">Collection - Troisieme annee ESE</p>
-      <h1>BUT3 - <strong>interfaces embarquees et drone</strong></h1>
-      <p class="lead">Derniere annee de BUT GEII autour de deux axes forts : le projet Kart Dashboard Pro V3 et le stage de fin de BUT dans le cadre du projet ARODE.</p>
-      <div class="quick-grid"><a href="#kart">Kart Dashboard</a><a href="#stage">Stage BUT3</a><a href="stage-but3.html">Details stage</a></div>
-    </section>
-
-    <section class="wrap section project-detail" id="kart">
-      <div class="detail-head"><span>SAE BUT3</span><h2>Kart Dashboard Pro V3</h2></div>
-      <div class="detail-grid">
-        <img src="assets/media/kart-dashboard-ui.png" alt="Interface Kart Dashboard Pro V3">
-        <div class="card prose">
-          <p>Application Python / PyQt6 pour Raspberry Pi 4, concue pour afficher des donnees vehicule en temps reel. L'architecture separe les services materiels, la simulation, le StateStore et l'interface.</p>
-          <p>Le projet met en avant une interface claire, des services non bloquants, un mode simulation pour developper sans materiel et une structure propre pour connecter les donnees vehicule.</p>
-          <div class="chips"><span>Python</span><span>PyQt6</span><span>Raspberry Pi</span><span>I2C</span><span>QThread</span><span>StateStore</span></div>
-          <p><a class="btn ghost" href="https://github.com/jibril936/kart-dashboard">Depot GitHub</a></p>
-        </div>
+      <p class="section-tag">Collection — Troisieme annee ESE</p>
+      <h1>BUT3 — <strong>interfaces embarquees et drone</strong></h1>
+      <p class="lead">Derniere annee de BUT GEII articulee autour de deux axes : un projet SAE complet en Python / PyQt6 pour systeme embarque, et un stage de 14 semaines au sein du laboratoire LIST3N de l'UTT sur le projet ARODE.</p>
+      <div class="quick-grid">
+        <a href="#kart">Kart Dashboard Pro V3</a>
+        <a href="#stage">Stage ARODE</a>
+        <a href="stage-but3.html">Detail du stage</a>
       </div>
     </section>
 
-    <section class="wrap section project-detail" id="stage">
-      <div class="detail-head"><span>Stage BUT3 - 16/03/2026 au 19/06/2026</span><h2>Projet ARODE : architecture drone et integration</h2></div>
-      <div class="detail-grid reverse">
-        <img src="assets/media/stage-x500-board.jpg" alt="Montage electronique drone X500">
+    <!-- KART DASHBOARD ───────────────────────────────────── -->
+    <section class="wrap section project-detail" id="kart">
+      <div class="detail-head">
+        <span>SAE BUT3 — Python / PyQt6 / Raspberry Pi 4</span>
+        <h2>Kart Dashboard Pro V3</h2>
+      </div>
+
+      <!-- Screenshots gallery -->
+      <div class="gallery three-img" style="margin-bottom:20px">
+        <img src="assets/media/kart-screen-1.png" alt="Kart Dashboard Pro V3 — vue interface 1">
+        <img src="assets/media/kart-screen-2.png" alt="Kart Dashboard Pro V3 — vue interface 2">
+        <img src="assets/media/kart-screen-3.png" alt="Kart Dashboard Pro V3 — vue interface 3">
+      </div>
+
+      <div class="detail-grid">
+        <img src="assets/media/kart-reel.jpg" alt="Dashboard Kart Dashboard Pro V3 monte sur le kart reel">
         <div class="card prose">
-          <p>Stage realise a l'Universite de Technologie de Troyes, au sein du LIST3N. Le projet ARODE existait avant mon arrivee : mon travail a porte sur des contributions ciblees dans ce cadre.</p>
-          <p>L'axe principal est l'etude et la mise en place d'une architecture drone ouverte, capable de remplacer progressivement une solution DJI commerciale limitee et de preparer du traitement embarque sur Jetson.</p>
-          <div class="chips"><span>X500</span><span>Pixhawk 6C</span><span>Jetson Orin Nano</span><span>SIYI</span><span>Mavic 2 Pro</span><span>IA detection</span></div>
-          <p><a class="btn primary" href="stage-but3.html">Voir le stage en detail</a></p>
+          <p>Application Python / PyQt6 concue pour un <strong>Raspberry Pi 4</strong>, destinee a afficher des donnees vehicule en temps reel depuis les capteurs du kart. L'architecture separe strictement les responsabilites en 4 couches, ce qui permet a la fois un fonctionnement robuste sur materiel et un developpement sans kart grace au mode simulation.</p>
+          <p>Le projet met en avant une interface claire, des services non bloquants, un mode simulation pour developper sans materiel et une structure propre pour connecter les donnees vehicule.</p>
+          <div class="chips">
+            <span>Python</span><span>PyQt6</span><span>QThread</span><span>Raspberry Pi 4</span>
+            <span>I2C</span><span>StateStore</span><span>Simulation</span><span>Temps reel</span>
+          </div>
+          <p><a class="btn ghost" href="https://github.com/jibril936/kart-dashboard">Depot GitHub</a></p>
+        </div>
+      </div>
+
+      <!-- Architecture 4 couches -->
+      <div style="margin-top:28px">
+        <p class="section-tag">Architecture</p>
+        <h3 style="font-size:clamp(18px,2.5vw,26px);margin-bottom:18px;font-weight:800;letter-spacing:-0.02em">4 couches pour un systeme embarque fiable</h3>
+        <div class="arch-grid">
+          <div class="arch-layer">
+            <h4>1 — Hardware / Service</h4>
+            <p>Encapsule l'acces aux peripheriques physiques (I2C, USB). Utilise <strong>QThread</strong> pour lire les capteurs hors du thread UI, evitant tout gel de l'interface. Publie des donnees normalisees vers le StateStore.</p>
+          </div>
+          <div class="arch-layer">
+            <h4>2 — Simulation (MockService)</h4>
+            <p>Reproduit le comportement des capteurs sans materiel connecte. Meme contrat d'interface que les vrais services — remplacement transparent. Permet de developper, tester et demontrer sans kart.</p>
+          </div>
+          <div class="arch-layer">
+            <h4>3 — Core (StateStore)</h4>
+            <p>Source de verite unique du systeme. Recoit les donnees des services, valide, agregge et diffuse les changements via <strong>pyqtSignal</strong>. Les consommateurs s'abonnent : pas d'acces direct aux services.</p>
+          </div>
+          <div class="arch-layer">
+            <h4>4 — Interface utilisateur (UI)</h4>
+            <p>Entierement decouple de l'acquisition. Ne lit pas les capteurs, ne contient pas de logique d'acquisition. Se contente de dessiner l'etat publie par le Store — interface stable et facile a faire evoluer.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flux de donnees -->
+      <div class="card prose" style="margin-top:20px">
+        <h3>Flux de donnees</h3>
+        <div class="chips" style="gap:6px;align-items:center">
+          <span>Capteurs I2C / USB</span>
+          <span style="background:none;border:none;color:var(--accent);font-size:16px;padding:0">→</span>
+          <span>Service (QThread)</span>
+          <span style="background:none;border:none;color:var(--accent);font-size:16px;padding:0">→</span>
+          <span>StateStore (source de verite)</span>
+          <span style="background:none;border:none;color:var(--accent);font-size:16px;padding:0">→</span>
+          <span>UI (rendu uniquement)</span>
+        </div>
+        <p style="margin-top:14px">Ce modele garantit un <strong>temps reel robuste</strong> (I/O hors thread UI), un <strong>developpement accelere</strong> (simulation sans materiel), une <strong>coherence fonctionnelle</strong> (etat centralise) et une <strong>modularite</strong> (UI decouple et remplacable).</p>
+      </div>
+    </section>
+
+    <!-- STAGE ARODE ──────────────────────────────────────── -->
+    <section class="wrap section project-detail" id="stage">
+      <div class="detail-head">
+        <span>Stage BUT3 — 16/03/2026 au 19/06/2026 — 14 semaines</span>
+        <h2>Projet ARODE — architecture drone ouverte</h2>
+      </div>
+
+      <div class="detail-grid reverse">
+        <img src="assets/media/stage-x500-board.jpg" alt="Montage electronique drone X500 ARODE">
+        <div class="card prose">
+          <ul class="spec-list">
+            <li><span>Organisme</span><strong>Universite de Technologie de Troyes — LIST3N</strong></li>
+            <li><span>Tuteur</span><strong>Pr Hichem SNOUSSI — Directeur adjoint LIST3N</strong></li>
+            <li><span>Periode</span><strong>16 mars → 19 juin 2026 (14 semaines)</strong></li>
+            <li><span>Sujet</span><strong>Etude et mise en place d'une architecture drone ouverte pour l'aide aux services de secours</strong></li>
+          </ul>
+          <p>Le projet ARODE existait avant mon arrivee. Mon stage ne porte pas sur la creation complete d'ARODE mais sur une <strong>contribution ciblee</strong> : architecture drone X500, solution de secours Mavic 2 Pro, tests de modeles de detection et ajustements ARODE Live.</p>
+          <div class="chips"><span>X500</span><span>Pixhawk 6C</span><span>Jetson Orin Nano</span><span>SIYI</span><span>Mavic 3E</span><span>Mavic 2 Pro</span><span>YOLO</span><span>DEIM</span><span>RT-DETR</span></div>
+          <p>
+            <a class="btn primary" href="stage-but3.html">Detail complet du stage</a>
+            <a class="btn ghost" href="assets/docs/rapport-stage-arode-drone.pdf">Rapport de stage</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 axes du stage -->
+      <div style="margin-top:24px">
+        <div class="grid two">
+          <div class="mission-card">
+            <h3>Architecture drone ouverte (axe principal)</h3>
+            <p>Etude et implantation d'une plateforme X500 V2 — chassis, Pixhawk, Jetson Orin Nano, SIYI, alimentation FCHUB, ESC, moteurs T-Motor. Objectif : remplacer progressivement une source DJI commerciale limitee et preparer le traitement embarque.</p>
+          </div>
+          <div class="mission-card">
+            <h3>Solution de secours Mavic 2 Pro</h3>
+            <p>Mise en place d'un DJI Mavic 2 Pro pour fiabiliser les demonstrations live du projet face a des personnes exterieures, pendant que le X500 est en cours d'integration. Tests flux video, GPS/metadonnees, exports CSV, affichage d'alarmes dans ARODE Live.</p>
+          </div>
+          <div class="mission-card">
+            <h3>Tests de modeles de detection fine-tunes</h3>
+            <p>Evaluation de YOLO, DEIM/DEIMv2 et RT-DETR dans la chaine complete ARODE — pas seulement leur performance isolee. Criteres : qualite des detections, stabilite, vitesse d'inference, format des sorties, synchronisation GPS, affichage dans l'interface.</p>
+          </div>
+          <div class="mission-card">
+            <h3>Donnees synthetiques et VLM (exploratoire)</h3>
+            <p>Exploration de la generation de donnees synthetiques (FLUX Fill, LaMa, SAM2, LoRA) pour ameliorer l'entrainement du VLM. Piste non finalisee : limites identifiees sur le realisme terrain, la perspective, les masques et le cout GPU.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap footer-grid"><p>© 2026 Mohamed Jibril Samahri</p><div><a href="but2.html">← BUT2</a><a href="projets.html">Projets →</a></div></div></footer>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Mohamed Jibril Samahri</p>
+      <div><a href="but2.html">← BUT2</a><a href="projets.html">Projets →</a></div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
 </body>
 </html>

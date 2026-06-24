@@ -4,96 +4,191 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BUT2 | Jibril Samahri</title>
-  <meta name="description" content="Deuxieme annee de BUT GEII ESE : voiture autonome, robot eviteur d'obstacle, FPGA regulateur de vitesse et stage drone.">
+  <meta name="description" content="Deuxieme annee de BUT GEII ESE : voiture autonome 2e place Cachan, robot eviteur d'obstacle IR, FPGA regulateur brushless et stage drone ARODE.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="pcb-bg" aria-hidden="true"></div>
   <header class="nav">
     <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
     <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
     <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">// Profil</a><a href="but1.html">// BUT1</a><a class="active" href="but2.html">// BUT2</a><a href="but3.html">// BUT3</a><a href="projets.html">// Projets</a><a href="contact.html">// Contact</a>
+      <a href="index.html">Profil</a>
+      <a href="but1.html">BUT1</a>
+      <a class="active" href="but2.html">BUT2</a>
+      <a href="but3.html">BUT3</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="page-hero wrap">
-      <p class="section-tag">Collection - Deuxieme annee ESE</p>
-      <h1>BUT2 - <strong>robotique, FPGA et drone</strong></h1>
-      <p class="lead">Deuxieme annee orientee vers des projets plus complets : programmation, robotique autonome, logique numerique, regulation et premier stage autour de la detection de victimes par drone.</p>
+      <p class="section-tag">Collection — Deuxieme annee ESE</p>
+      <h1>BUT2 — <strong>robotique, FPGA et drone</strong></h1>
+      <p class="lead">Deuxieme annee orientee vers des projets complets : voiture autonome LiDAR (2e place au concours de Cachan), carte IR pour robot eviteur, commande FPGA d'un moteur brushless, et premier stage au LIST3N autour de la detection de victimes par drone.</p>
       <div class="quick-grid">
         <a href="#voiture">Voiture autonome</a>
-        <a href="#robot">Robot eviteur</a>
-        <a href="#fpga">FPGA</a>
-        <a href="#stage">Stage BUT2</a>
+        <a href="#robot">Robot eviteur IR</a>
+        <a href="#fpga">FPGA brushless</a>
+        <a href="#stage">Stage BUT2 — ARODE</a>
       </div>
     </section>
 
+    <!-- VOITURE AUTONOME ─────────────────────────────────── -->
     <section class="wrap section project-detail" id="voiture">
-      <div class="detail-head"><span>SAE S3</span><h2>Voiture autonome</h2></div>
+      <div class="detail-head">
+        <span>SAE S3 — Voiture autonome</span>
+        <h2>Vehicule autonome LiDAR — <strong style="color:var(--accent-2)">2e place au concours de Cachan</strong></h2>
+      </div>
+
       <div class="detail-grid">
-        <img src="assets/media/kart-sae.jpg" alt="Voiture autonome et equipe projet">
+        <img src="assets/media/mahara/voiture-cachan.jpg" alt="Equipe voiture autonome — concours Cachan">
         <div class="card prose">
-          <p>Projet de voiture autonome avec rapport et soutenance. Le travail porte sur la logique de decision, la programmation, l'acquisition de donnees et la validation du comportement du vehicule.</p>
-          <p>Cette SAE a demande de relier perception, traitement informatique et action sur le vehicule, avec une restitution orale et technique.</p>
-          <div class="chips"><span>Programmation</span><span>Decision</span><span>Capteurs</span><span>Validation</span></div>
-          <p><a class="btn ghost" href="assets/docs/sae-informatique-s3.pdf">Rapport</a> <a class="btn ghost" href="assets/docs/voiture-autonome-soutenance.pdf">Soutenance</a></p>
+          <p>Le defi consistait a concevoir et programmer la partie logicielle d'un vehicule capable de suivre un circuit en simulation puis d'evoluer en conditions reelles. Objectifs doubles : approfondir la POO en <strong>C++/Qt</strong> avec des notions reseaux TCP/IP, et mettre en oeuvre un <strong>LiDAR 360°</strong> pour une perception et navigation autonomes.</p>
+          <p>Le travail mene nous a permis de decrocher la <strong>2e place parmi les IUT en competition</strong>. Ce podium souligne la solidite de la solution technique et la capacite de l'equipe a la faire performer en conditions reelles.</p>
+          <div class="chips"><span>C++ / Qt</span><span>TCP/IP</span><span>LiDAR 360°</span><span>PWM</span><span>Trajectoire autonome</span><span>Concours Cachan</span></div>
+          <p>
+            <a class="btn ghost" href="assets/docs/sae-informatique-s3.pdf">Rapport</a>
+            <a class="btn ghost" href="assets/docs/voiture-autonome-soutenance.pdf">Soutenance (EN)</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:20px">
+        <div class="card prose">
+          <h3>Algorithme de centrage LiDAR</h3>
+          <p>Pour chaque angle θ ∈ [−90°, +90°], on calcule <code>valeur = distance × sin(θ)</code> ; la somme Σ(valeur) fournit un ecart lateral global :</p>
+          <ul>
+            <li>Σ ≈ 0 → vehicule centre</li>
+            <li>Σ &gt; 0 / &lt; 0 → corrections gauche/droite</li>
+          </ul>
+          <p>La meme somme, interpretee comme indicateur de proximite murale, ajuste dynamiquement la vitesse.</p>
+        </div>
+        <div class="card">
+          <h3>Architecture</h3>
+          <ul class="spec-list">
+            <li><span>Capteur</span><strong>LiDAR 360° — 360 mesures d'angle</strong></li>
+            <li><span>Actionneurs</span><strong>PWM moteurs gauche/droite</strong></li>
+            <li><span>Comm.</span><strong>Socket TCP — serveur embarque ↔ client Qt</strong></li>
+            <li><span>Interface</span><strong>Start/Stop, cartographie LiDAR temps reel</strong></li>
+            <li><span>Resultats</span><strong>2e place parmi les IUT — concours Cachan</strong></li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- ROBOT EVITEUR ─────────────────────────────────────── -->
     <section class="wrap section project-detail" id="robot">
-      <div class="detail-head"><span>Robotique</span><h2>Robot eviteur d'obstacle</h2></div>
+      <div class="detail-head">
+        <span>Robotique — Carte IR</span>
+        <h2>Robot eviteur d'obstacle — carte receptrice infrarouge</h2>
+      </div>
+
       <div class="detail-grid reverse">
         <img src="assets/media/mahara/robot-eviteur-fonctions.png" alt="Fonctions informatiques du robot eviteur">
         <div class="card prose">
-          <p>Projet centre sur l'analyse fonctionnelle, l'evitement d'obstacle et les fonctions informatiques associees au comportement du robot.</p>
-          <p>Le travail consiste a decomposer le comportement : detection d'obstacle, choix de trajectoire, commande et verification des fonctions attendues.</p>
-          <div class="chips"><span>Analyse fonctionnelle</span><span>Robot mobile</span><span>Decision</span><span>Tests</span></div>
-          <p><a class="btn ghost" href="assets/docs/robot-eviteur-fonctions.pdf">Document</a> <a class="btn ghost" href="assets/docs/robot-eviteur-document.pdf">Annexe</a></p>
+          <p>Ma mission : realiser la <strong>carte receptrice infrarouge (IR)</strong> et developper la fonction logicielle associee. Cette carte convertit la lumiere IR reflechie par une balise en une mesure numerique transmise au microcontroleur principal par <strong>I²C</strong>. Elle constitue l'un des «yeux» du robot et conditionne sa capacite a se diriger.</p>
+          <div class="chips"><span>Photodiode SFH 2500</span><span>Ampli transimpedance</span><span>Filtre passe-bande 38 kHz</span><span>MCP3221</span><span>I²C</span><span>Detecteur de crete</span></div>
+          <p>
+            <a class="btn ghost" href="assets/docs/robot-eviteur-fonctions.pdf">Fonctions informatiques</a>
+            <a class="btn ghost" href="assets/docs/robot-eviteur-document.pdf">Rapport conception</a>
+          </p>
         </div>
+      </div>
+
+      <div class="card prose" style="margin-top:20px">
+        <h3>Chaine de traitement IR</h3>
+        <ul class="spec-list">
+          <li><span>Photodiode SFH 2500</span><strong>Capte la lumiere IR reflechie — compatible LED emettrice du robot</strong></li>
+          <li><span>Ampli transimpedance ±9 V</span><strong>Convertit le courant µA en tension exploitable — gain regle par essais</strong></li>
+          <li><span>Filtre passe-bande actif</span><strong>Centre 38 kHz — elimine la lumiere ambiante, ne laisse que la frequence de modulation</strong></li>
+          <li><span>Detecteur de crete (Schottky + RC)</span><strong>Transforme le signal alternatif en tension continue proportionnelle a la distance</strong></li>
+          <li><span>MCP3221 via I²C</span><strong>Conversion numerique et envoi au microcontroleur principal</strong></li>
+        </ul>
       </div>
     </section>
 
+    <!-- FPGA ─────────────────────────────────────────────── -->
     <section class="wrap section project-detail" id="fpga">
-      <div class="detail-head"><span>FPGA</span><h2>Regulateur de vitesse</h2></div>
+      <div class="detail-head">
+        <span>SAE CPLD — FPGA DE10-Lite</span>
+        <h2>Commande FPGA d'un moteur brushless</h2>
+      </div>
+
+      <div class="gallery three-img" style="margin-bottom:20px">
+        <img src="assets/media/mahara/fpga-1.png" alt="FPGA regulateur de vitesse — montage 1">
+        <img src="assets/media/mahara/fpga-2.png" alt="FPGA regulateur de vitesse — montage 2">
+        <img src="assets/media/mahara/fpga-3.png" alt="FPGA regulateur de vitesse — montage 3">
+      </div>
+
       <div class="detail-grid">
-        <img src="assets/media/mahara/fpga-1.png" alt="Montage FPGA regulateur de vitesse">
-        <div class="card prose">
-          <p>Projet de regulation de vitesse avec logique numerique, validation fonctionnelle et exploitation de signaux. Il met en avant l'utilisation d'une architecture FPGA pour traiter des signaux et piloter une regulation.</p>
-          <p>Les essais ont permis de verifier le comportement du montage et de comprendre les contraintes propres a la logique materielle.</p>
-          <div class="chips"><span>FPGA</span><span>Logique numerique</span><span>Regulation</span><span>Signaux</span></div>
+        <div class="gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <img src="assets/media/mahara/fpga-4.png" alt="FPGA regulateur — detail 4" style="width:100%;border-radius:var(--radius);border:1px solid var(--line)">
+          <img src="assets/media/mahara/fpga-5.png" alt="FPGA regulateur — detail 5" style="width:100%;border-radius:var(--radius);border:1px solid var(--line)">
         </div>
+        <div class="card prose">
+          <p>Mon binome et moi avons realise la commande complete d'un moteur brushless a l'aide d'un <strong>FPGA DE10-Lite</strong>. Ma contribution : conception des blocs PWM en VHDL, mise au point d'un regulateur de vitesse qui compense instantanement une surcharge (resistance ajoutee au moteur), et interface utilisateur sur les six afficheurs 7 segments et la barre de 10 LEDs.</p>
+          <p>La video du test montre la boucle de controle fermee : quand on freine le rotor avec le doigt, le duty-cycle grimpe aussitot et la vitesse revient a la consigne. Quand on retire le doigt, le regulateur diminue le PWM pour retrouver le regime initial.</p>
+          <div class="chips"><span>VHDL</span><span>PWM 10 bits</span><span>Regulation de vitesse</span><span>FPGA DE10-Lite</span><span>Afficheurs 7 segments</span><span>Barre LEDs</span></div>
+        </div>
+      </div>
+
+      <div class="card prose" style="margin-top:20px">
+        <h3>Points techniques cles</h3>
+        <ul class="spec-list">
+          <li><span>Generation PWM 10 bits</span><strong>Compteur modulo 1024 a 50 MHz — resolution duty-cycle 0,1 % → pilotage precis du couple</strong></li>
+          <li><span>Evolution auto duty-cycle</span><strong>Table ROM 128 mots — mode «rampe» (triangle) ou «sinus» pour reduire le bruit de commutation</strong></li>
+          <li><span>Boucle «anti-charge»</span><strong>Mesure de vitesse a 1 kHz ; correcteur proportionnel : duty += Kp × (consigne − vitesse)</strong></li>
+          <li><span>Interface utilisateur</span><strong>6 afficheurs 7 segments + barre 10 LEDs pour vitesse et pourcentage PWM en direct</strong></li>
+        </ul>
       </div>
     </section>
 
+    <!-- STAGE BUT2 ────────────────────────────────────────── -->
     <section class="wrap section project-detail" id="stage">
-      <div class="detail-head"><span>Stage BUT2 - 13 janv. au 7 mars 2025</span><h2>Detection de victimes par drone</h2></div>
-      <div class="gallery three-img">
-        <img src="assets/media/mahara/stage-drone-1.jpg" alt="Drone du stage BUT2">
-        <img src="assets/media/mahara/stage-drone-2.jpg" alt="Radiocommande DJI">
-        <img src="assets/media/mahara/stage-drone-3.jpg" alt="Drone en vol">
+      <div class="detail-head">
+        <span>Stage BUT2 — 13 janv. au 7 mars 2025 — LIST3N, Universite de Reims</span>
+        <h2>Detection de victimes par drone — projet ARODE</h2>
       </div>
-      <div class="grid two">
+
+      <div class="gallery three-img">
+        <img src="assets/media/mahara/stage-but2-drone-a.jpg" alt="Drone du stage BUT2">
+        <img src="assets/media/mahara/stage-but2-drone-b.jpg" alt="Drone en operation stage BUT2">
+        <img src="assets/media/mahara/stage-but2-drone-c.jpg" alt="Materiel drone stage BUT2">
+      </div>
+
+      <div class="grid two" style="margin-top:20px">
         <div class="card prose">
-          <p>Stage realise au LIST3N dans le cadre du projet ARODE, visant la detection de victimes via drones pour les equipes de secours.</p>
-          <ul>
-            <li>Transmission video inferieure a une seconde.</li>
-            <li>Detection IA embarquee.</li>
-            <li>Synchronisation video, GPS et horodatage.</li>
-            <li>Tests autour de drones DJI et migration vers Mavic 2 Pro.</li>
+          <p>Stage realise au <strong>LIST3N</strong> (Universite de Reims) dans le cadre du projet <strong>ARODE</strong> (Autonomous Rescue Drones), visant la detection de victimes via drones pour les equipes de secours lors de catastrophes (incendies, effondrements, zones inaccessibles).</p>
+          <h3 style="font-size:13px;margin-top:14px">Chronologie</h3>
+          <ul class="spec-list">
+            <li><span>S1</span><strong>Exploration Parrot ANAFI, tests de latence</strong></li>
+            <li><span>S2–S3</span><strong>Migration vers DJI Mavic 2 Pro</strong></li>
+            <li><span>S4</span><strong>Prototype IA embarquee</strong></li>
+            <li><span>S5–S6</span><strong>Passage Mavic 3 Enterprise + routeur Wi-Fi</strong></li>
+            <li><span>S7–S8</span><strong>Synchro video/GPS et demo finale</strong></li>
           </ul>
         </div>
-        <div class="card">
-          <h3>// outils</h3>
+        <div class="card prose">
+          <h3>Realisations techniques</h3>
+          <ul>
+            <li><strong>Live Stream ≤ 1 s</strong> — video HD diffusee en quasi temps reel</li>
+            <li><strong>Megaphone embarque</strong> — diffusion de messages vocaux depuis le drone</li>
+            <li><strong>Synchro video + GPS</strong> — alignement precis des timestamps et coordonnees</li>
+            <li><strong>Interface Android</strong> — application de controle dediee</li>
+          </ul>
           <div class="chips"><span>Android Studio</span><span>Java / Kotlin</span><span>DJI Mobile SDK</span><span>ffmpeg</span><span>exiftool</span><span>Methode agile</span></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap footer-grid"><p>© 2026 Mohamed Jibril Samahri</p><div><a href="but1.html">← BUT1</a><a href="but3.html">BUT3 →</a></div></div></footer>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Mohamed Jibril Samahri</p>
+      <div><a href="but1.html">← BUT1</a><a href="but3.html">BUT3 →</a></div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
 </body>
 </html>

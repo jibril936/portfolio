@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div class="pcb-bg" aria-hidden="true"></div>
   <header class="nav">
     <a class="brand" href="index.html"><span class="dot"></span>SAMAHRI<span>.</span>geii</a>
     <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">≡</button>
     <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html">// Profil</a><a href="but1.html">// BUT1</a><a href="but2.html">// BUT2</a><a href="but3.html">// BUT3</a><a class="active" href="projets.html">// Projets</a><a href="contact.html">// Contact</a>
+      <a href="index.html">Profil</a>
+      <a href="but1.html">BUT1</a>
+      <a href="but2.html">BUT2</a>
+      <a href="but3.html">BUT3</a>
+      <a class="active" href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -28,9 +32,18 @@
       <p class="section-tag">Troisieme annee</p>
       <h2 class="section-title">Systemes embarques, drone et IA</h2>
       <div class="grid three">
-        <a class="project-card" href="but3.html#kart"><img src="assets/media/kart-dashboard-ui.png" alt="Kart Dashboard Pro V3"><div><span>SAE BUT3</span><h3>Kart Dashboard Pro V3</h3><p>Dashboard Python / PyQt6 pour Raspberry Pi 4, services materiels et simulation.</p></div></a>
-        <a class="project-card" href="stage-but3.html"><img src="assets/media/stage-x500-board.jpg" alt="Drone X500 ARODE"><div><span>Stage BUT3</span><h3>Architecture drone ARODE</h3><p>X500, Pixhawk, Jetson, SIYI, alimentation et tests progressifs.</p></div></a>
-        <a class="project-card" href="stage-but3.html#ia"><img src="assets/media/drone-reference.jpg" alt="Drone et IA"><div><span>IA / VLM</span><h3>Detection et donnees synthetiques</h3><p>Tests YOLO, DEIM/DEIMv2, RT-DETR et exploration de donnees synthetiques pour VLM.</p></div></a>
+        <a class="project-card" href="but3.html#kart">
+          <img src="assets/media/kart-dashboard-ui.png" alt="Kart Dashboard Pro V3">
+          <div><span>SAE BUT3</span><h3>Kart Dashboard Pro V3</h3><p>Dashboard Python / PyQt6 pour Raspberry Pi 4, services materiels et simulation.</p></div>
+        </a>
+        <a class="project-card" href="stage-but3.html">
+          <img src="assets/media/stage-x500-board.jpg" alt="Drone X500 ARODE">
+          <div><span>Stage BUT3</span><h3>Architecture drone ARODE</h3><p>X500, Pixhawk, Jetson, SIYI, alimentation et tests progressifs.</p></div>
+        </a>
+        <a class="project-card" href="stage-but3.html#ia">
+          <img src="assets/media/drone-reference.jpg" alt="Drone et IA">
+          <div><span>IA / VLM</span><h3>Detection et donnees synthetiques</h3><p>Tests YOLO, DEIM/DEIMv2, RT-DETR et exploration de donnees synthetiques pour VLM.</p></div>
+        </a>
       </div>
     </section>
 
@@ -38,10 +51,22 @@
       <p class="section-tag">Deuxieme annee</p>
       <h2 class="section-title">Robotique, FPGA et stage drone</h2>
       <div class="grid three">
-        <a class="project-card" href="but2.html#voiture"><img src="assets/media/kart-sae.jpg" alt="Voiture autonome"><div><span>SAE S3</span><h3>Voiture autonome</h3><p>Logique de decision, programmation, acquisition et validation du comportement.</p></div></a>
-        <a class="project-card" href="but2.html#robot"><img src="assets/media/mahara/robot-eviteur-doc.png" alt="Robot eviteur d'obstacle"><div><span>Robotique</span><h3>Robot eviteur d'obstacle</h3><p>Analyse fonctionnelle, detection d'obstacle et fonctions informatiques.</p></div></a>
-        <a class="project-card" href="but2.html#fpga"><img src="assets/media/mahara/fpga-2.png" alt="Regulateur FPGA"><div><span>FPGA</span><h3>Regulateur de vitesse</h3><p>Logique numerique, regulation, exploitation de signaux et validation.</p></div></a>
-        <a class="project-card" href="but2.html#stage"><img src="assets/media/mahara/stage-drone-2.jpg" alt="Stage drone BUT2"><div><span>Stage BUT2</span><h3>Detection de victimes par drone</h3><p>DJI Mobile SDK, video, GPS, ffmpeg, exiftool et tests de latence.</p></div></a>
+        <a class="project-card" href="but2.html#voiture">
+          <img src="assets/media/mahara/voiture-cachan.jpg" alt="Voiture autonome — concours Cachan">
+          <div><span>SAE S3 — 2e place Cachan</span><h3>Voiture autonome LiDAR</h3><p>C++/Qt, LiDAR 360°, TCP/IP, correction de trajectoire en temps reel.</p></div>
+        </a>
+        <a class="project-card" href="but2.html#robot">
+          <img src="assets/media/mahara/robot-eviteur-fonctions.png" alt="Robot eviteur — fonctions IR">
+          <div><span>Robotique — Carte IR</span><h3>Robot eviteur d'obstacle</h3><p>Carte receptrice IR (photodiode, ampli, filtre 38 kHz, MCP3221 I²C).</p></div>
+        </a>
+        <a class="project-card" href="but2.html#fpga">
+          <img src="assets/media/mahara/fpga-1.png" alt="FPGA regulateur brushless">
+          <div><span>SAE CPLD — FPGA DE10-Lite</span><h3>Commande FPGA brushless</h3><p>PWM VHDL 10 bits, boucle de regulation, afficheurs 7 segments et barre LEDs.</p></div>
+        </a>
+        <a class="project-card" href="but2.html#stage">
+          <img src="assets/media/mahara/stage-but2-drone-b.jpg" alt="Stage drone BUT2 — ARODE">
+          <div><span>Stage BUT2 — LIST3N Reims</span><h3>Detection de victimes par drone</h3><p>DJI Mobile SDK, live stream ≤ 1 s, synchro video/GPS, megaphone embarque.</p></div>
+        </a>
       </div>
     </section>
 
@@ -49,14 +74,28 @@
       <p class="section-tag">Premiere annee</p>
       <h2 class="section-title">Fondamentaux GEII</h2>
       <div class="grid three">
-        <a class="project-card" href="but1.html#sae0"><img src="assets/media/mahara/sae0-1.jpg" alt="SAE 0"><div><span>SAE 0</span><h3>Premiere approche electronique</h3><p>Composants, mesures, cablage et restitution technique.</p></div></a>
-        <a class="project-card" href="but1.html#sae1"><img src="assets/media/mahara/sae1-1.jpg" alt="SAE 1 multimetre"><div><span>SAE 1</span><h3>Multimetre numerique</h3><p>Soudure, PCB, firmware et affichage par LED 7 segments.</p></div></a>
-        <a class="project-card" href="but1.html#sae3"><img src="assets/media/mahara/sae3-1.png" alt="Robot suiveur de ligne"><div><span>SAE 3</span><h3>Robot suiveur de ligne</h3><p>Capteurs CNY70, suivi de ligne, GRAFCET et dossier de fabrication.</p></div></a>
+        <a class="project-card" href="but1.html#sae0">
+          <img src="assets/media/mahara/sae0-1.jpg" alt="SAE 0 — immersion electronique">
+          <div><span>SAE 0</span><h3>Immersion electronique</h3><p>Lecture de schemas, choix de composants, soudure traversant et CMS.</p></div>
+        </a>
+        <a class="project-card" href="but1.html#sae1">
+          <img src="assets/media/mahara/sae1-1.jpg" alt="SAE 1 — multimetre numerique">
+          <div><span>SAE 1</span><h3>Multimetre numerique</h3><p>PCB pre-grave, firmware embarque, mesure V/A/R, multiplexage 7 segments.</p></div>
+        </a>
+        <a class="project-card" href="but1.html#sae3">
+          <img src="assets/media/mahara/sae3-cny.png" alt="SAE 3 — robot suiveur de ligne CNY70">
+          <div><span>SAE 3</span><h3>Robot suiveur de ligne</h3><p>Capteurs CNY70, suivi de ligne, GRAFCET, KiCad et dossier de fabrication.</p></div>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap footer-grid"><p>© 2026 Mohamed Jibril Samahri</p><div><a href="index.html">Accueil</a><a href="contact.html">Contact</a></div></div></footer>
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Mohamed Jibril Samahri</p>
+      <div><a href="index.html">Accueil</a><a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
   <script src="assets/app.js"></script>
 </body>
 </html>
